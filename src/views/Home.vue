@@ -16,7 +16,14 @@ import TheMain from "@/components/TheMain.vue";
 export default {
   name: "Home",
   components: {
-    TheHeader, TheFooter, TheFilter, TheMain
+    TheHeader, 
+    TheFooter, 
+    TheFilter, 
+    TheMain
   }
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>
