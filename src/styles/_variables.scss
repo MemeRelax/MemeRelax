@@ -5,3 +5,25 @@ $font-special: "Bungee", cursive;
 // Colors
 
 // Measures
+
+// Spacers
+$spacers: (
+  0: 0,
+  1: rem(3px),
+  2: rem(6px),
+  3: rem(12px),
+  4: rem(24px),
+  5: rem(32px),
+  6: rem(48px),
+  7: rem(100px),
+  8: rem(120px),
+);
+
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1800px,
+);

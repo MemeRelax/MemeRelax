@@ -1,0 +1,7 @@
+@function spacer($key: 3) {
+  @return map-get($spacers, $key);
+}
+
+@function bp($key) {
+  @return map-get($breakpoints, $key);
+}

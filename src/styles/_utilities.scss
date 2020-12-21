@@ -4,17 +4,17 @@
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: bp(md)) {
   .container {
     width: 750px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: bp(lg)) {
   .container {
     width: 970px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: bp(xl)) {
   .container {
     width: 1170px;
   }
