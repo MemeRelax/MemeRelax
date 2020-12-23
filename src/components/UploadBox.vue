@@ -1,6 +1,8 @@
 <template>
   <div class="c-upload-box">
-    <div class="c-upload-box__container">upload</div>
+    <div class="c-upload-box__container">
+      <h1 class="heading-h1">Upload your meme</h1>
+    </div>
   </div>
 </template>
 
