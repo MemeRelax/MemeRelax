@@ -1,6 +1,8 @@
 <template>
   <div class="c-filter">
-    filter
+    <div class="c-filter__container">
+        filter
+    </div>
   </div>
 </template>
 
@@ -13,5 +15,9 @@ name: "TheFilter"
 <style lang="scss" scoped>
 .c-filter {
   background-color: yellowgreen;
+}
+
+.c-filter__container {
+  @extend .container;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div class="c-footer">
-    footer
+    <div class="c-footer__container">
+      No rights reserved :(
+    </div>
   </div>
 </template>
 
@@ -12,6 +14,11 @@ name: "TheFooter"
 
 <style lang="scss" scoped>
 .c-footer {
-  background-color: burlywood;
+  @include pad-tb-spacer(4);
+  background-color: $color-tertiary;
+}
+
+.c-footer__container {
+  @extend .container;
 }
 </style>
