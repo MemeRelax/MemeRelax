@@ -25,3 +25,8 @@
     } //1800
   }
 }
+
+@mixin pad-tb-spacer($val) {
+  padding-top: spacer($val);
+  padding-bottom: spacer($val);
+}
