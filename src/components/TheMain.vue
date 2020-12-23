@@ -1,20 +1,25 @@
 <template>
   <div class="c-main">
     <div class="c-main__container">
-      main
+      <Meme />
     </div>
   </div>
 </template>
 
 <script>
+import Meme from "@/components/Meme.vue";
+
 export default {
-name: "TheMain"
+  name: "TheMain",
+  components: { 
+    Meme
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 .c-main {
-  background-color: royalblue;
+  @include pad-tb-spacer(3);
 }
 
 .c-main__container {

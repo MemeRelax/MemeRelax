@@ -14,7 +14,7 @@ name: "TheFilter"
 
 <style lang="scss" scoped>
 .c-filter {
-  background-color: yellowgreen;
+  @include pad-tb-spacer(3);
 }
 
 .c-filter__container {
