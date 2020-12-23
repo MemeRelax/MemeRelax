@@ -1,8 +1,10 @@
 <template>
-  <div class="home">
+  <div class="v-home">
     <TheHeader/>
-    <TheFilter/>
-    <TheMain/>
+    <div class="v-home__container">
+      <TheFilter/>
+      <TheMain/>
+    </div>
     <TheFooter/>
   </div>
 </template>
@@ -25,5 +27,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
 
+  .v-home__container {
+    @extend .container-columns;
+  }
 </style>
