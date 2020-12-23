@@ -1,9 +1,9 @@
 <template>
-  <div class="v-home">
+  <div class="v-upload">
     <TheHeader />
-    <div class="v-home__container">
-      <TheMain />
-      <TheFilter />
+    <div class="v-upload__container">
+      <UploadBox />
+      <UploadForm />
     </div>
     <TheFooter />
   </div>
@@ -12,28 +12,28 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import TheFilter from "@/components/TheFilter.vue";
-import TheMain from "@/components/TheMain.vue";
+import UploadForm from "@/components/UploadForm.vue";
+import UploadBox from "@/components/UploadBox.vue";
 
 export default {
-  name: "Home",
+  name: "Upload",
   components: {
     TheHeader,
     TheFooter,
-    TheFilter,
-    TheMain,
+    UploadBox,
+    UploadForm,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.v-home {
+.v-upload {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-.v-home__container {
+.v-upload__container {
   @extend .container-columns;
 }
 </style>

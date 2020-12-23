@@ -18,6 +18,6 @@
 .container-columns {
   @extend .container;
   display: grid;
-  grid-template-columns: minmax(rem(300px), 1fr) 3fr;
+  grid-template-columns: 3fr minmax(rem(300px), 1fr);
   grid-template-rows: 1fr;
 }
