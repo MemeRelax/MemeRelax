@@ -1,12 +1,23 @@
 // Fonts
-$font-main: "Source Sans Pro", sans-serif;
+$font-main: "Exo 2", sans-serif;
 $font-special: "Bungee", cursive;
 
 // Colors
+$color-dark: #091d20;
+$color-white: #f7fff7;
+$color-primary: #ff6b6b;
+$color-secondary: #ffe66d;
+$color-tertiary: #42aaa3;
 
 // Measures
 
 // Spacers
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
 $spacers: (
   0: 0,
   1: rem(3px),
