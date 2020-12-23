@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 .c-header {
   @include pad-tb-spacer(4);
-  background-color: $color-tertiary;
+  background-color: $color-primary;
 }
 
 .c-header__container {
