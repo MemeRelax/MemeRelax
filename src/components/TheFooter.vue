@@ -8,8 +8,8 @@
 
 <script>
 export default {
-name: "TheFooter"
-}
+  name: "TheFooter",
+};
 </script>
 
 <style lang="scss" scoped>

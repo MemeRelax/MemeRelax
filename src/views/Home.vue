@@ -1,11 +1,11 @@
 <template>
   <div class="v-home">
-    <TheHeader/>
+    <TheHeader />
     <div class="v-home__container">
-      <TheFilter/>
-      <TheMain/>
+      <TheFilter />
+      <TheMain />
     </div>
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
@@ -18,11 +18,11 @@ import TheMain from "@/components/TheMain.vue";
 export default {
   name: "Home",
   components: {
-    TheHeader, 
-    TheFooter, 
-    TheFilter, 
-    TheMain
-  }
+    TheHeader,
+    TheFooter,
+    TheFilter,
+    TheMain,
+  },
 };
 </script>
 
@@ -33,7 +33,7 @@ export default {
   grid-template-rows: auto 1fr auto;
 }
 
-  .v-home__container {
-    @extend .container-columns;
-  }
+.v-home__container {
+  @extend .container-columns;
+}
 </style>

@@ -9,15 +9,14 @@
 
 <script>
 export default {
-name: "TheHeader"
-}
+  name: "TheHeader",
+};
 </script>
 
 <style lang="scss" scoped>
 .c-header {
   @include pad-tb-spacer(4);
   background-color: $color-tertiary;
-
 }
 
 .c-header__container {
