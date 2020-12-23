@@ -8,7 +8,8 @@
       "language": ["pl", "en"],
       "tags": ["animals", "dog", "funny"],
       "votesUp": 10,
-      "votesDown": 2
+      "votesDown": 2,
+      "detectedText": ""
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "language": ["all"],
       "tags": ["animals", "cat", "funny"],
       "votesUp": 8,
-      "votesDown": 9
+      "votesDown": 9,
+      "detectedText": ""
     }
   ]
 }
