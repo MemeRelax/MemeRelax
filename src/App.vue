@@ -9,5 +9,6 @@
 <style lang="scss">
 body {
   font-family: $font-main;
+  color: $color-dark;
 }
 </style>
