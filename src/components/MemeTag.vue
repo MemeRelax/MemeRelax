@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-meme-tag {
+  display: inline-block;
   margin: spacer(1) spacer(1);
   padding: spacer(2) spacer(3);
   background-color: aquamarine;
