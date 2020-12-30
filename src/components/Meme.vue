@@ -48,6 +48,7 @@ export default {
   flex: 0 1 60%;
 
   & > img {
+    height: 100%;
     width: 100%;
   }
 }
