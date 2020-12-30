@@ -7,6 +7,7 @@
       "userId": "11",
       "language": ["pl", "en"],
       "tags": ["animals", "dog", "funny"],
+      "hashtags": [],
       "votesUp": 10,
       "votesDown": 2,
       "detectedText": ""
@@ -18,6 +19,7 @@
       "userId": "11",
       "language": ["all"],
       "tags": ["animals", "cat", "funny"],
+      "hashtags": [],
       "votesUp": 8,
       "votesDown": 9,
       "detectedText": ""
