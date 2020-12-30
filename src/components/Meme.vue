@@ -12,14 +12,14 @@
           v-for="language in meme.language"
           :key="language + meme.id"
         >
-          {{ language }}
+          <MemeTag :tag="language" />
         </li>
         <li
           class="c-meme-info-tag-list-item"
           v-for="tag in meme.tags"
           :key="tag + meme.id"
         >
-          {{ tag }}
+          <MemeTag :tag="tag" />
         </li>
       </ul>
     </div>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import MemeTag from "@/components/MemeTag.vue";
+
 export default {
   name: "Meme",
   props: {
@@ -34,6 +36,9 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  components: {
+    MemeTag,
   },
 };
 </script>
@@ -55,5 +60,11 @@ export default {
 
 .c-meme__info {
   padding: spacer(3);
+}
+
+.c-meme__info-tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
