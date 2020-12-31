@@ -1,7 +1,7 @@
 <template>
   <div class="c-upload-box">
     <div class="c-upload-box__container">
-      <h1 class="heading-h1">Upload your meme</h1>
+      <h1 class="u-heading-h1">Upload your meme</h1>
       <form
         class="c-upload-box__form"
         :class="{ highlighted: highightedArea }"
@@ -27,7 +27,7 @@
             @change="onImagePick"
           />
           <label class="c-upload-box__label" for="file">
-            <strong>Choose a file</strong>
+            <strong class="c-upload-box__label--link">Choose a file</strong>
             <span class="c-upload-box__dragndrop"> or drag it here</span>.
           </label>
         </div>
@@ -88,12 +88,15 @@ export default {
 .c-upload-box__form {
   min-height: rem(200px);
   padding: spacer(6);
-  background-color: white;
-  outline: 2px dashed black;
-  outline-offset: -10px;
+  background-color: $color-primary-lightest;
+  outline: 5px dashed $color-primary-light;
+  outline-offset: -20px;
+  transition: all 0.5s;
 
   &.highlighted {
-    background-color: coral;
+    background-color: rgba($color-primary-lightest, 0.5);
+    outline: 8px dashed $color-primary;
+    outline-offset: -30px;
   }
 }
 
@@ -114,7 +117,26 @@ export default {
 }
 
 .c-upload-box__label {
+  margin-bottom: spacer(3);
   cursor: pointer;
+
+  &--link {
+    position: relative;
+    z-index: 1;
+    &:hover,
+    &:active {
+      &::before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        background-color: rgba($color-secondary, 0.3);
+        width: 100%;
+        height: 5px;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
 }
 
 .c-upload-box__uploading,
@@ -122,8 +144,13 @@ export default {
   display: none;
 }
 
+.c-upload-box__success {
+  display: flex;
+  justify-content: center;
+}
+
 .c-upload-box__success-image {
-  margin-top: spacer(3);
+  margin-top: spacer(4);
   max-width: rem(400px);
 }
 </style>
