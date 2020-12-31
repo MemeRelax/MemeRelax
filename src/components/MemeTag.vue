@@ -7,11 +7,26 @@
 <script>
 export default {
   name: "MemeTag",
+  data() {
+    return {
+      tag: "",
+    };
+  },
   props: {
-    tag: {
+    tagId: {
+      type: String,
+    },
+    type: {
       type: String,
       required: true,
     },
+  },
+  created: function fetchTags() {
+    if (this.type === "author") {
+      this.tag = this.tagId;
+    } else {
+      this.tag = this.tagId;
+    }
   },
 };
 </script>

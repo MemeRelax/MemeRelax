@@ -6,22 +6,22 @@
     <div class="c-meme__info">
       <h2 class="c-meme__info-heading">{{ meme.name }}</h2>
       <span class="c-meme__info-author"
-        >Added by <MemeTag :tag="meme.userId" :type="author"
+        >Added by <MemeTag :tagId="meme.userId" type="author"
       /></span>
       <ul class="c-meme__info-tag-list">
         <li
           class="c-meme-info-tag-list-item"
-          v-for="language in meme.language"
+          v-for="language in meme.langId"
           :key="language + meme.id"
         >
-          <MemeTag :tag="language" :type="lang" />
+          <MemeTag :tagId="language" type="lang" />
         </li>
         <li
           class="c-meme-info-tag-list-item"
-          v-for="tag in meme.tags"
-          :key="tag + meme.id"
+          v-for="cat in meme.catId"
+          :key="cat + meme.id"
         >
-          <MemeTag :tag="tag" :type="tag" />
+          <MemeTag :tagId="cat" type="category" />
         </li>
       </ul>
     </div>
