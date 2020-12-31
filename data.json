@@ -1,0 +1,70 @@
+{
+  "memes": [
+    {
+      "id": "1",
+      "src": "https://images.unsplash.com/photo-1570122942985-bca0a44624da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+      "name": "Funny dog",
+      "userId": "11",
+      "langId": ["lang-pl", "lang-en"],
+      "catId": ["cat-animals", "cat-dog", "cat-funny"],
+      "hashtags": [],
+      "votesUp": 10,
+      "votesDown": 2,
+      "detectedText": ""
+    },
+    {
+      "id": "2",
+      "src": "https://images.unsplash.com/photo-1552944150-6dd1180e5999?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1250&q=80",
+      "name": "Funny cat",
+      "userId": "11",
+      "langId": ["lang-all"],
+      "catId": ["cat-animals", "cat-cat", "cat-funny"],
+      "hashtags": [],
+      "votesUp": 8,
+      "votesDown": 9,
+      "detectedText": ""
+    }
+  ],
+  "tags": [
+    {
+      "id": "lang-all",
+      "type": "lang",
+      "name": "all"
+    },
+    {
+      "id": "lang-pl",
+      "type": "lang",
+      "name": "pl"
+    },
+    {
+      "id": "lang-en",
+      "type": "lang",
+      "name": "en"
+    },
+    {
+      "id": "lang-other",
+      "type": "lang",
+      "name": "other"
+    },
+    {
+      "id": "cat-animals",
+      "type": "category",
+      "name": "animals"
+    },
+    {
+      "id": "cat-dog",
+      "type": "category",
+      "name": "dog"
+    },
+    {
+      "id": "cat-funny",
+      "type": "category",
+      "name": "funny"
+    },
+    {
+      "id": "cat-cat",
+      "type": "category",
+      "name": "cat"
+    }
+  ]
+}
