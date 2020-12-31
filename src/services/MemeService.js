@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:3000/memes";
+const API_URL = "http://localhost:3000/";
 
 const apiClient = axios.create({
   baseURL: `${API_URL}`,
@@ -12,6 +12,9 @@ const apiClient = axios.create({
 
 export default {
   getMemes() {
-    return apiClient.get("/");
+    return apiClient.get("/memes");
+  },
+  getTags() {
+    return apiClient.get("/tags");
   },
 };
