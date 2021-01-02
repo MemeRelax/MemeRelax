@@ -1,6 +1,6 @@
 <template>
   <div class="c-meme-tag">
-    {{ tagArr }}
+    {{ tagId || tagArr.name }}
   </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
   display: inline-block;
   margin: spacer(1) spacer(1);
   padding: spacer(2) spacer(3);
-  background-color: aquamarine;
+  background-color: $color-secondary;
   line-height: 1;
 }
 </style>
