@@ -2,8 +2,13 @@
   <div class="c-upload-form">
     <div class="c-upload-form__container">
       <div class="c-upload-form__form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" />
+        <label class="c-upload-form__label" for="meme-name">Name:</label>
+        <input
+          class="c-upload-form__input"
+          type="text"
+          id="meme-name"
+          name="meme-name"
+        />
       </div>
       <div class="c-upload-form__form-group">
         <ul class="c-upload-form__tag-list">
@@ -15,8 +20,14 @@
           </li>
         </ul>
       </div>
+      <div class="c-upload-form__form-group">
+        <label class="c-upload-form__label" for="meme-hashtags"
+          >Hashtags:</label
+        >
+        <textarea class="c-upload-form__input" id="meme-hashtags" />
+      </div>
 
-      <button>SAVE</button>
+      <button class="c-upload-form__button">SAVE</button>
     </div>
   </div>
 </template>
@@ -35,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .c-upload-form {
   @include pad-tb-spacer(4);
+  padding-top: rem(65px);
 }
 
 .c-upload-form__container {
@@ -44,6 +56,7 @@ export default {
 .c-upload-form__form-group {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: spacer(4);
 }
 
 ul.c-upload-form__tag-list {
@@ -89,5 +102,37 @@ ul.c-upload-form__tag-list li input[type="checkbox"] {
 }
 ul.c-upload-form__tag-list li input[type="checkbox"]:focus + label {
   border: 1px solid $color-secondary;
+}
+
+.c-upload-form__label {
+  background-color: rgba($color-primary, 0.8);
+  color: $color-white;
+}
+
+.c-upload-form__input,
+.c-upload-form__label {
+  padding: spacer(2);
+  border: 0;
+  border-bottom: 1px solid $color-primary;
+  font-size: rem(14px);
+}
+
+.c-upload-form__input,
+textarea {
+  padding: spacer(3);
+  width: 100%;
+  font-family: inherit;
+  background-color: rgba($color-primary, 0.1);
+}
+
+.c-upload-form__button {
+  padding: spacer(2) spacer(3);
+  border: 1px solid $color-primary;
+  background-color: $color-primary;
+  color: $color-white;
+  font-family: inherit;
+  font-size: rem(18px);
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 </style>
