@@ -38,6 +38,11 @@
 <script>
 export default {
   name: "UploadForm",
+  data: function() {
+    return {
+      langs: [],
+    };
+  },
 };
 </script>
 

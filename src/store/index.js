@@ -25,5 +25,7 @@ export default createStore({
         .catch((e) => console.log(e));
     },
   },
-  modules: {},
+  getters: {
+    getTagById: (state) => state.tags.find((el) => el.id === "lang-en"),
+  },
 });

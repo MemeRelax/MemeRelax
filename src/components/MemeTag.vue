@@ -1,6 +1,6 @@
 <template>
   <div class="c-meme-tag">
-    {{ tag }}
+    {{ tagArr }}
   </div>
 </template>
 
@@ -9,10 +9,13 @@ export default {
   name: "MemeTag",
   data() {
     return {
-      tag: "",
+      tag: [],
     };
   },
   props: {
+    tagArr: {
+      type: Object,
+    },
     tagId: {
       type: String,
     },
@@ -21,13 +24,13 @@ export default {
       required: true,
     },
   },
-  created: function fetchTags() {
-    if (this.type === "author") {
-      this.tag = this.tagId;
-    } else {
-      this.tag = this.tagId;
-    }
-  },
+  // created: function fetchTags() {
+  //   if (this.type === "author") {
+  //     return;
+  //   } else {
+  //     this.tag = this.tagArr;
+  //   }
+  // },
 };
 </script>
 

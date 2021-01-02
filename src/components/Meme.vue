@@ -14,14 +14,14 @@
           v-for="language in meme.langId"
           :key="language + meme.id"
         >
-          <MemeTag :tagId="language" type="lang" />
+          <MemeTag :tagArr="getTagByIds" type="lang" />
         </li>
         <li
           class="c-meme-info-tag-list-item"
           v-for="cat in meme.catId"
           :key="cat + meme.id"
         >
-          <MemeTag :tagId="cat" type="category" />
+          <MemeTag :tagArr="getTagByIds" type="category" />
         </li>
       </ul>
     </div>
@@ -30,6 +30,7 @@
 
 <script>
 import MemeTag from "@/components/MemeTag.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Meme",
@@ -41,6 +42,12 @@ export default {
   },
   components: {
     MemeTag,
+  },
+  computed: {
+    ...mapGetters(["getTagById"]),
+    getTagByIds() {
+      return this.getTagById;
+    },
   },
 };
 </script>
