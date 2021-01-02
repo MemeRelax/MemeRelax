@@ -1,7 +1,8 @@
 <template>
   <div class="c-header">
     <div class="c-header__container">
-      <div class="c-header__heading">Memes</div>
+      <router-link to="/" class="c-header__main-heading">Memes</router-link>
+
       <div class="c-header__access">Log in | Sign in</div>
     </div>
   </div>
@@ -26,10 +27,11 @@ export default {
   align-items: center;
 }
 
-.c-header__heading {
+.c-header__main-heading {
   font-family: $font-special;
   font-size: rem(38px);
   color: $color-secondary;
+  text-decoration: none;
 }
 
 .c-header__access {
