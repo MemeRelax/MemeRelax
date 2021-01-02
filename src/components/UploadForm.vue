@@ -7,24 +7,10 @@
       </div>
       <div class="c-upload-form__form-group">
         <ul class="c-upload-form__tag-list">
-          <li>
-            <input type="checkbox" id="all" value="all" /><label for="all"
-              >All</label
-            >
-          </li>
-          <li>
-            <input type="checkbox" id="pl" value="pl" checked /><label for="pl"
-              >PL</label
-            >
-          </li>
-          <li>
-            <input type="checkbox" id="en" value="en" checked /><label for="en"
-              >EN</label
-            >
-          </li>
-          <li>
-            <input type="checkbox" id="other" value="other" /><label for="other"
-              >Other</label
+          <li v-for="tag in $store.state.tags" :key="`${tag.id}-tag`">
+            <input type="checkbox" :id="tag.id" :value="tag.id" /><label
+              :for="tag.id"
+              >{{ tag.name }}</label
             >
           </li>
         </ul>
@@ -40,7 +26,7 @@ export default {
   name: "UploadForm",
   data: function() {
     return {
-      langs: [],
+      tags: [],
     };
   },
 };
@@ -68,13 +54,11 @@ ul.c-upload-form__tag-list li {
 }
 ul.c-upload-form__tag-list li label {
   display: inline-block;
-  // background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(139, 139, 139, 0.3);
-  color: gray;
+  border: 1px solid rgba($color-primary, 0.3);
+  color: rgba($color-primary, 0.6);
   font-size: rem(14px);
-  border-radius: 20px;
   white-space: nowrap;
-  margin: 3px;
+  margin: 4px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -90,9 +74,9 @@ ul.c-upload-form__tag-list li label {
 }
 
 ul.c-upload-form__tag-list li input[type="checkbox"]:checked + label {
-  border: 1px solid #1bdbf8;
-  background-color: #12bbd4;
-  color: #fff;
+  border: 1px solid $color-primary;
+  background-color: $color-primary;
+  color: $color-secondary;
   transition: all 0.2s;
 }
 
@@ -104,6 +88,6 @@ ul.c-upload-form__tag-list li input[type="checkbox"] {
   opacity: 0;
 }
 ul.c-upload-form__tag-list li input[type="checkbox"]:focus + label {
-  border: 1px solid #e9a1ff;
+  border: 1px solid $color-secondary;
 }
 </style>
