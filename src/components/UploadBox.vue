@@ -150,7 +150,7 @@ export default {
 }
 
 .c-upload-box__success-image {
-  margin-top: spacer(4);
+  margin-top: spacer(2);
   max-width: rem(400px);
 }
 </style>
