@@ -54,7 +54,8 @@
     {
       "id": "cat-dog",
       "type": "category",
-      "name": "dog"
+      "name": "dog",
+      "autoSelect": "cat-animals"
     },
     {
       "id": "cat-funny",
@@ -64,7 +65,8 @@
     {
       "id": "cat-cat",
       "type": "category",
-      "name": "cat"
+      "name": "cat",
+      "autoSelect": "cat-animals"
     }
   ]
 }
