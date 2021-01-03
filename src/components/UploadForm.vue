@@ -8,15 +8,19 @@
           type="text"
           id="meme-name"
           name="meme-name"
+          v-model="memeName"
         />
       </div>
       <div class="c-upload-form__form-group">
         <ul class="c-upload-form__tag-list">
           <li v-for="tag in $store.state.tags" :key="`${tag.id}-tag`">
-            <input type="checkbox" :id="tag.id" :value="tag.id" /><label
-              :for="tag.id"
-              >{{ tag.name }}</label
-            >
+            <input
+              name="meme-tags"
+              type="checkbox"
+              v-model="selectedTags"
+              :id="tag.id"
+              :value="tag.id"
+            /><label :for="tag.id">{{ tag.name }}</label>
           </li>
         </ul>
       </div>
@@ -24,10 +28,13 @@
         <label class="c-upload-form__label" for="meme-hashtags"
           >Hashtags:</label
         >
-        <textarea class="c-upload-form__input" id="meme-hashtags" />
+        <textarea
+          class="c-upload-form__input"
+          id="meme-hashtags"
+          v-model="memeHashtags"
+        />
       </div>
-
-      <button class="c-upload-form__button">SAVE</button>
+      <button class="c-upload-form__button" @click="sendNewMeme">SAVE</button>
     </div>
   </div>
 </template>
@@ -38,7 +45,36 @@ export default {
   data: function() {
     return {
       tags: [],
+      memeName: "",
+      memeHashtags: "",
+      selectedTags: [],
+      dataToSend: {},
     };
+  },
+  computed: {
+    hashtagsArr: function() {
+      return this.memeHashtags.split(/[ ,.]+/);
+    },
+    langIdArr: function() {
+      return this.selectedTags.filter((t) => t.includes("lang-"));
+    },
+    catIdArr: function() {
+      return this.selectedTags.filter((t) => t.includes("cat-"));
+    },
+  },
+  methods: {
+    autoSelectTag: function() {},
+    sendNewMeme: function() {
+      this.dataToSend = {
+        id: "22",
+        src: this.$store.state.droppedFiles,
+        name: this.memeName,
+        userId: "11",
+        langId: this.langIdArr,
+        catId: this.catIdArr,
+        hashtags: this.hashtagsArr,
+      };
+    },
   },
 };
 </script>
