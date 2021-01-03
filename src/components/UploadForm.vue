@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     hashtagsArr: function() {
-      return this.memeHashtags.split(/[ ,.]+/);
+      return this.memeHashtags.split(/[ ,;.#]+/);
     },
     langIdArr: function() {
       return this.selectedTags.filter((t) => t.includes("lang-"));
