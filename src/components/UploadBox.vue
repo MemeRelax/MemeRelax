@@ -54,13 +54,13 @@ export default {
   methods: {
     onImagePick(e) {
       this.droppedFiles = e.target.files || e.dataTransfer.files;
-      var fReader = new FileReader();
+      let fReader = new FileReader();
       fReader.readAsDataURL(this.droppedFiles[0]);
       const vm = this;
       fReader.onloadend = function(event) {
         vm.imageSrc = event.target.result;
       };
-      console.log(this.droppedFiles);
+      this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
     },
     preventDefaults(e) {
       e.preventDefault();
@@ -88,7 +88,7 @@ export default {
 .c-upload-box__form {
   min-height: rem(200px);
   padding: spacer(6);
-  background-color: $color-primary-lightest;
+  background-color: rgba($color-primary-lightest, 0.7);
   outline: 5px dashed $color-primary-light;
   outline-offset: -20px;
   transition: all 0.5s;

@@ -5,6 +5,7 @@ export default createStore({
   state: {
     loadingStatus: "notLoading",
     tags: [],
+    droppedFiles: {},
   },
   mutations: {
     SET_LOADING_STATUS(state, status) {
@@ -12,6 +13,9 @@ export default createStore({
     },
     SET_TAGS(state, tags) {
       state.tags = tags;
+    },
+    SET_DROPPED_FILES(state, file) {
+      state.droppedFiles = file;
     },
   },
   actions: {
