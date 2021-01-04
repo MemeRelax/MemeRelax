@@ -6,7 +6,6 @@
         class="c-upload-box__form"
         :class="{ highlighted: highightedArea }"
         method="post"
-        action=""
         enctype="multipart/form-data"
         @dragenter="preventDefaults($event), highlightArea($event)"
         @dragover="preventDefaults($event), highlightArea($event)"

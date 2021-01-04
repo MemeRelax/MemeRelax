@@ -12,24 +12,19 @@
 
 <script>
 import Meme from "@/components/Meme.vue";
-import MemeService from "@/services/MemeService.js";
 
 export default {
   name: "TheMain",
   components: {
     Meme,
   },
-  data: function() {
-    return {
-      memes: [],
-    };
+  computed: {
+    memes: function() {
+      return this.$store.state.memes;
+    },
   },
-  created: function fetchMemes() {
-    MemeService.getMemes()
-      .then((r) => {
-        this.memes = r.data;
-      })
-      .catch((e) => console.log(e));
+  created() {
+    this.$store.dispatch("fetchMemes");
   },
 };
 </script>
