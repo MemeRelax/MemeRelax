@@ -2,13 +2,20 @@
   <div class="c-upload-form">
     <div class="c-upload-form__container">
       <div class="c-upload-form__form-group">
-        <label class="c-upload-form__label" for="meme-name">Name:</label>
+        <!-- <label class="c-upload-form__label" for="meme-name">Name:</label>
         <input
           class="c-upload-form__input"
           type="text"
           id="meme-name"
           name="meme-name"
           v-model="memeName"
+        /> -->
+        <BaseInput
+          v-model="memeName"
+          type="text"
+          id="meme-name"
+          name="meme-name"
+          label="Name"
         />
       </div>
       <div class="c-upload-form__form-group">
@@ -25,13 +32,20 @@
         </ul>
       </div>
       <div class="c-upload-form__form-group">
-        <label class="c-upload-form__label" for="meme-hashtags"
+        <!-- <label class="c-upload-form__label" for="meme-hashtags"
           >Hashtags:</label
         >
         <textarea
           class="c-upload-form__input"
           id="meme-hashtags"
           v-model="memeHashtags"
+        /> -->
+        <BaseInput
+          v-model="memeHashtags"
+          id="meme-hashtags"
+          name="meme-hashtags"
+          label="Hashtags"
+          textarea
         />
       </div>
       <button class="c-upload-form__button" @click="sendNewMeme">SAVE</button>
@@ -40,8 +54,11 @@
 </template>
 
 <script>
+import BaseInput from "@/components/BaseInput.vue";
+
 export default {
   name: "UploadForm",
+  components: { BaseInput },
   data: function() {
     return {
       tags: [],
@@ -140,18 +157,18 @@ ul.c-upload-form__tag-list li input[type="checkbox"]:focus + label {
   border: 1px solid $color-secondary;
 }
 
-.c-upload-form__label {
-  background-color: rgba($color-primary, 0.8);
-  color: $color-white;
-}
+// .c-upload-form__label {
+//   background-color: rgba($color-primary, 0.8);
+//   color: $color-white;
+// }
 
-.c-upload-form__input,
-.c-upload-form__label {
-  padding: spacer(2);
-  border: 0;
-  border-bottom: 1px solid $color-primary;
-  font-size: rem(14px);
-}
+// .c-upload-form__input,
+// .c-upload-form__label {
+//   padding: spacer(2);
+//   border: 0;
+//   border-bottom: 1px solid $color-primary;
+//   font-size: rem(14px);
+// }
 
 .c-upload-form__input,
 textarea {
