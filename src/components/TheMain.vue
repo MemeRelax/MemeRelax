@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     memes: function() {
-      return this.$store.state.memes;
+      return this.$store.state.filteredMemes;
     },
   },
   created() {

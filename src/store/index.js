@@ -8,6 +8,9 @@ export default createStore({
     tagsLoadingStatus: "notLoading",
     tags: [],
     droppedFiles: {},
+    // languageFilters: [],
+    // categoryFilters: [],
+    filteredMemes: [],
   },
   mutations: {
     SET_TAGS_LOADING_STATUS(state, status) {
@@ -25,6 +28,15 @@ export default createStore({
     SET_DROPPED_FILES(state, file) {
       state.droppedFiles = file;
     },
+    // SET_LANGUAGE_FILTERS(state, languageFilters) {
+    //   state.languageFilters = languageFilters;
+    // },
+    // SET_CATEGORY_FILTERS(state, categoryFilters) {
+    //   state.categoryFilters = categoryFilters;
+    // },
+    SET_FILTERED_MEMES(state, filteredMemes) {
+      state.filteredMemes = filteredMemes;
+    },
   },
   actions: {
     fetchTags(context) {
@@ -41,6 +53,7 @@ export default createStore({
       MemeService.getMemes()
         .then((r) => {
           context.commit("SET_MEMES", r.data);
+          context.commit("SET_FILTERED_MEMES", r.data);
           context.commit("SET_MEMES_LOADING_STATUS", "notLoading");
         })
         .catch((e) => console.log(e));
