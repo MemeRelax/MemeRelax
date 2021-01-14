@@ -12,12 +12,12 @@
       </div>
       <div class="c-upload-form__form-group">
         <BaseCheckboxGroup
-          :items="languageIdArray"
+          :items="$store.getters['languageArray']"
           v-model="selectedLanguageIds"
           name="meme-languagess"
         />
         <BaseCheckboxGroup
-          :items="categoryIdArray"
+          :items="$store.getters['categoryArray']"
           v-model="selectedCategoryIds"
           name="meme-categoriess"
         />
@@ -53,12 +53,12 @@ export default {
     hashtagsArray: function() {
       return this.memeHashtags.split(/[ ,;.#]+/);
     },
-    languageIdArray: function() {
-      return this.$store.state.tags.filter((t) => t.type === "language");
-    },
-    categoryIdArray: function() {
-      return this.$store.state.tags.filter((t) => t.type === "category");
-    },
+    // languageArray: function() {
+    //   return this.$store.state.tags.filter((t) => t.type === "language");
+    // },
+    // categoryArray: function() {
+    //   return this.$store.state.tags.filter((t) => t.type === "category");
+    // },
   },
   methods: {
     autoSelectTag: function() {},

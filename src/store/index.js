@@ -48,5 +48,7 @@ export default createStore({
   },
   getters: {
     getTagById: (state) => (id) => state.tags.find((el) => el.id === id),
+    languageArray: (state) => state.tags.filter((t) => t.type === "language"),
+    categoryArray: (state) => state.tags.filter((t) => t.type === "category"),
   },
 });
