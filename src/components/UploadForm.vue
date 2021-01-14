@@ -54,11 +54,8 @@
 </template>
 
 <script>
-import BaseInput from "@/components/BaseInput.vue";
-
 export default {
   name: "UploadForm",
-  components: { BaseInput },
   data: function() {
     return {
       tags: [],
