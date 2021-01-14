@@ -19,17 +19,27 @@
         />
       </div>
       <div class="c-upload-form__form-group">
-        <ul class="c-upload-form__tag-list">
-          <li v-for="tag in $store.state.tags" :key="`${tag.id}-tag`">
-            <input
+        <!-- <ul class="c-upload-form__tag-list"> -->
+        <!-- <li v-for="tag in $store.state.tags" :key="`${tag.id}-tag`"> -->
+        <!-- <input
               name="meme-tags"
               type="checkbox"
               v-model="selectedTags"
               :id="tag.id"
               :value="tag.id"
-            /><label :for="tag.id">{{ tag.name }}</label>
-          </li>
-        </ul>
+            /><label :for="tag.id">{{ tag.name }}</label> -->
+        <BaseCheckboxGroup
+          :items="langIdArr"
+          v-model="selectedLangIds"
+          name="meme-langs"
+        />
+        <BaseCheckboxGroup
+          :items="catIdArr"
+          v-model="selectedCatIds"
+          name="meme-cats"
+        />
+        <!-- </li> -->
+        <!-- </ul> -->
       </div>
       <div class="c-upload-form__form-group">
         <!-- <label class="c-upload-form__label" for="meme-hashtags"
@@ -61,7 +71,8 @@ export default {
       tags: [],
       memeName: "",
       memeHashtags: "",
-      selectedTags: [],
+      selectedLangIds: [],
+      selectedCatIds: [],
       dataToSend: {},
     };
   },
@@ -70,10 +81,10 @@ export default {
       return this.memeHashtags.split(/[ ,;.#]+/);
     },
     langIdArr: function() {
-      return this.selectedTags.filter((t) => t.includes("lang-"));
+      return this.$store.state.tags.filter((t) => t.id.includes("lang-"));
     },
     catIdArr: function() {
-      return this.selectedTags.filter((t) => t.includes("cat-"));
+      return this.$store.state.tags.filter((t) => t.id.includes("cat-"));
     },
   },
   methods: {
@@ -84,8 +95,8 @@ export default {
         src: this.$store.state.droppedFiles,
         name: this.memeName,
         userId: "11",
-        langId: this.langIdArr,
-        catId: this.catIdArr,
+        langId: this.selectedLangIds,
+        catId: this.selectedCatIds,
         hashtags: this.hashtagsArr,
       };
     },
@@ -109,51 +120,13 @@ export default {
   margin-bottom: spacer(4);
 }
 
-ul.c-upload-form__tag-list {
-  list-style: none;
-}
-ul.c-upload-form__tag-list li {
-  display: inline;
-}
-ul.c-upload-form__tag-list li label {
-  display: inline-block;
-  border: 1px solid rgba($color-primary, 0.3);
-  color: rgba($color-primary, 0.6);
-  font-size: rem(14px);
-  white-space: nowrap;
-  margin: 4px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.2s;
-}
+// ul.c-upload-form__tag-list {
+//   list-style: none;
+// }
 
-ul.c-upload-form__tag-list li label {
-  padding: spacer(2) spacer(3);
-  cursor: pointer;
-}
-
-ul.c-upload-form__tag-list li input[type="checkbox"]:checked + label {
-  border: 1px solid $color-primary;
-  background-color: $color-primary;
-  color: $color-secondary;
-  transition: all 0.2s;
-}
-
-ul.c-upload-form__tag-list li input[type="checkbox"] {
-  display: absolute;
-}
-ul.c-upload-form__tag-list li input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-}
-ul.c-upload-form__tag-list li input[type="checkbox"]:focus + label {
-  border: 1px solid $color-secondary;
-}
-
+// li {
+//   display: inline;
+// }
 // .c-upload-form__label {
 //   background-color: rgba($color-primary, 0.8);
 //   color: $color-white;
