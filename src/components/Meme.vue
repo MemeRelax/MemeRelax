@@ -11,7 +11,7 @@
       <ul class="c-meme__info-tag-list">
         <li
           class="c-meme-info-tag-list-item"
-          v-for="language in meme.langId"
+          v-for="language in meme.languageId"
           :key="language + meme.id"
         >
           <MemeTag
