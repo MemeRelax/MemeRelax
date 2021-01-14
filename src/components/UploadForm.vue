@@ -31,7 +31,7 @@
           textarea
         />
       </div>
-      <button class="c-upload-form__button" @click="sendNewMeme">SAVE</button>
+      <BaseButton @click="sendNewMeme">Save</BaseButton>
     </div>
   </div>
 </template>
@@ -91,24 +91,5 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: spacer(4);
-}
-
-.c-upload-form__input,
-textarea {
-  padding: spacer(3);
-  width: 100%;
-  font-family: inherit;
-  background-color: rgba($color-primary, 0.1);
-}
-
-.c-upload-form__button {
-  padding: spacer(2) spacer(3);
-  border: 1px solid $color-primary;
-  background-color: $color-primary;
-  color: $color-white;
-  font-family: inherit;
-  font-size: rem(18px);
-  letter-spacing: 1px;
-  cursor: pointer;
 }
 </style>
