@@ -2,7 +2,7 @@
   "memes": [
     {
       "id": "1",
-      "src": "@/assets/memes/meme1.jpg",
+      "src": "meme1.jpg",
       "name": "How to do smokey eyes",
       "userId": "11",
       "langId": ["lang-en"],
@@ -14,7 +14,7 @@
     },
     {
       "id": "2",
-      "src": "@/assets/memes/meme2.jpg",
+      "src": "meme2.jpg",
       "name": "Playtime is over",
       "userId": "11",
       "langId": ["lang-en"],
@@ -26,7 +26,7 @@
     },
     {
       "id": "3",
-      "src": "@/assets/memes/meme3.jpg",
+      "src": "meme3.jpg",
       "name": "Tea",
       "userId": "11",
       "langId": ["lang-other"],
@@ -38,7 +38,7 @@
     },
     {
       "id": "4",
-      "src": "@/assets/memes/meme5.jpg",
+      "src": "meme5.jpg",
       "name": "When your program is a complete mess, but it does its job",
       "userId": "11",
       "langId": ["lang-en"],
@@ -50,7 +50,7 @@
     },
     {
       "id": "5",
-      "src": "@/assets/memes/meme6.jpg",
+      "src": "meme6.jpg",
       "name": "Secret toilet room",
       "userId": "11",
       "langId": ["lang-all"],

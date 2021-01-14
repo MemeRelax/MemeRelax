@@ -1,7 +1,7 @@
 <template>
   <div class="c-meme">
     <div class="c-meme__img">
-      <img :src="meme.src" alt="" />
+      <img :src="image" alt="" />
     </div>
     <div class="c-meme__info">
       <h2 class="c-meme__info-heading">{{ meme.name }}</h2>
@@ -48,12 +48,18 @@ export default {
   components: {
     MemeTag,
   },
+  computed: {
+    image() {
+      return require(`@/assets/memes/${this.meme.src}`);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .c-meme {
   display: flex;
+  padding: spacer(3);
   border: $border-thin;
 }
 
@@ -67,7 +73,7 @@ export default {
 }
 
 .c-meme__info {
-  padding: spacer(3);
+  margin-left: spacer(3);
 }
 
 .c-meme__info-tag-list {
