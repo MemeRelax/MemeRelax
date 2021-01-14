@@ -14,12 +14,12 @@
         <BaseCheckboxGroup
           :items="languageIdArray"
           v-model="selectedLanguageIds"
-          name="meme-langs"
+          name="meme-languagess"
         />
         <BaseCheckboxGroup
           :items="categoryIdArray"
           v-model="selectedCategoryIds"
-          name="meme-cats"
+          name="meme-categoriess"
         />
       </div>
       <div class="c-upload-form__form-group">
@@ -54,10 +54,10 @@ export default {
       return this.memeHashtags.split(/[ ,;.#]+/);
     },
     languageIdArray: function() {
-      return this.$store.state.tags.filter((t) => t.id.includes("lang-"));
+      return this.$store.state.tags.filter((t) => t.type === "language");
     },
     categoryIdArray: function() {
-      return this.$store.state.tags.filter((t) => t.id.includes("category-"));
+      return this.$store.state.tags.filter((t) => t.type === "category");
     },
   },
   methods: {

@@ -18,8 +18,7 @@
 export default {
   props: {
     modelValue: {
-      type: Boolean,
-      default: false,
+      type: Array,
     },
     items: {
       type: Array,

@@ -21,11 +21,11 @@
         </li>
         <li
           class="c-meme-info-tag-list-item"
-          v-for="cat in meme.categoryId"
-          :key="cat + meme.id"
+          v-for="category in meme.categoryId"
+          :key="category + meme.id"
         >
           <MemeTag
-            :tagArr="$store.getters['getTagById'](cat)"
+            :tagArr="$store.getters['getTagById'](category)"
             type="category"
           />
         </li>
