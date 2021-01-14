@@ -2,14 +2,6 @@
   <div class="c-upload-form">
     <div class="c-upload-form__container">
       <div class="c-upload-form__form-group">
-        <!-- <label class="c-upload-form__label" for="meme-name">Name:</label>
-        <input
-          class="c-upload-form__input"
-          type="text"
-          id="meme-name"
-          name="meme-name"
-          v-model="memeName"
-        /> -->
         <BaseInput
           v-model="memeName"
           type="text"
@@ -19,15 +11,6 @@
         />
       </div>
       <div class="c-upload-form__form-group">
-        <!-- <ul class="c-upload-form__tag-list"> -->
-        <!-- <li v-for="tag in $store.state.tags" :key="`${tag.id}-tag`"> -->
-        <!-- <input
-              name="meme-tags"
-              type="checkbox"
-              v-model="selectedTags"
-              :id="tag.id"
-              :value="tag.id"
-            /><label :for="tag.id">{{ tag.name }}</label> -->
         <BaseCheckboxGroup
           :items="langIdArr"
           v-model="selectedLangIds"
@@ -38,18 +21,8 @@
           v-model="selectedCatIds"
           name="meme-cats"
         />
-        <!-- </li> -->
-        <!-- </ul> -->
       </div>
       <div class="c-upload-form__form-group">
-        <!-- <label class="c-upload-form__label" for="meme-hashtags"
-          >Hashtags:</label
-        >
-        <textarea
-          class="c-upload-form__input"
-          id="meme-hashtags"
-          v-model="memeHashtags"
-        /> -->
         <BaseInput
           v-model="memeHashtags"
           id="meme-hashtags"
@@ -119,26 +92,6 @@ export default {
   flex-wrap: wrap;
   margin-bottom: spacer(4);
 }
-
-// ul.c-upload-form__tag-list {
-//   list-style: none;
-// }
-
-// li {
-//   display: inline;
-// }
-// .c-upload-form__label {
-//   background-color: rgba($color-primary, 0.8);
-//   color: $color-white;
-// }
-
-// .c-upload-form__input,
-// .c-upload-form__label {
-//   padding: spacer(2);
-//   border: 0;
-//   border-bottom: 1px solid $color-primary;
-//   font-size: rem(14px);
-// }
 
 .c-upload-form__input,
 textarea {
