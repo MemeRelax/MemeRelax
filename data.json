@@ -2,11 +2,11 @@
   "memes": [
     {
       "id": "1",
-      "src": "https://images.unsplash.com/photo-1570122942985-bca0a44624da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-      "name": "Funny dog",
+      "src": "@/assets/memes/meme1.jpg",
+      "name": "How to do smokey eyes",
       "userId": "11",
-      "langId": ["lang-pl", "lang-en"],
-      "catId": ["cat-animals", "cat-dog", "cat-funny"],
+      "langId": ["lang-en"],
+      "catId": ["cat-beauty", "cat-pathetic"],
       "hashtags": [],
       "votesUp": 10,
       "votesDown": 2,
@@ -14,14 +14,50 @@
     },
     {
       "id": "2",
-      "src": "https://images.unsplash.com/photo-1552944150-6dd1180e5999?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1250&q=80",
-      "name": "Funny cat",
+      "src": "@/assets/memes/meme2.jpg",
+      "name": "Playtime is over",
       "userId": "11",
-      "langId": ["lang-all"],
-      "catId": ["cat-animals", "cat-cat", "cat-funny"],
+      "langId": ["lang-en"],
+      "catId": ["cat-kids"],
       "hashtags": [],
       "votesUp": 8,
       "votesDown": 9,
+      "detectedText": ""
+    },
+    {
+      "id": "3",
+      "src": "@/assets/memes/meme3.jpg",
+      "name": "Tea",
+      "userId": "11",
+      "langId": ["lang-other"],
+      "catId": ["cat-anxiety"],
+      "hashtags": ["spanish"],
+      "votesUp": 10,
+      "votesDown": 2,
+      "detectedText": ""
+    },
+    {
+      "id": "4",
+      "src": "@/assets/memes/meme5.jpg",
+      "name": "When your program is a complete mess, but it does its job",
+      "userId": "11",
+      "langId": ["lang-en"],
+      "catId": ["cat-it", "cat-animals"],
+      "hashtags": ["bird"],
+      "votesUp": 10,
+      "votesDown": 2,
+      "detectedText": ""
+    },
+    {
+      "id": "5",
+      "src": "@/assets/memes/meme6.jpg",
+      "name": "Secret toilet room",
+      "userId": "11",
+      "langId": ["lang-all"],
+      "catId": ["cat-pathetic", "cat-house"],
+      "hashtags": ["toilet", "furniture", "russian"],
+      "votesUp": 10,
+      "votesDown": 2,
       "detectedText": ""
     }
   ],
@@ -58,15 +94,40 @@
       "autoSelect": "cat-animals"
     },
     {
-      "id": "cat-funny",
-      "type": "category",
-      "name": "funny"
-    },
-    {
       "id": "cat-cat",
       "type": "category",
       "name": "cat",
       "autoSelect": "cat-animals"
+    },
+    {
+      "id": "cat-beauty",
+      "type": "category",
+      "name": "beauty"
+    },
+    {
+      "id": "cat-it",
+      "type": "category",
+      "name": "IT"
+    },
+    {
+      "id": "cat-anxiety",
+      "type": "category",
+      "name": "anxiety"
+    },
+    {
+      "id": "cat-kids",
+      "type": "category",
+      "name": "kids"
+    },
+    {
+      "id": "cat-house",
+      "type": "category",
+      "name": "house"
+    },
+    {
+      "id": "cat-pathetic",
+      "type": "category",
+      "name": "pathetic"
     }
   ]
 }
