@@ -6,7 +6,7 @@
       "name": "How to do smokey eyes",
       "userId": "11",
       "langId": ["lang-en"],
-      "catId": ["cat-beauty", "cat-pathetic"],
+      "categoryId": ["category-beauty", "category-pathetic"],
       "hashtags": [],
       "votesUp": 10,
       "votesDown": 2,
@@ -18,7 +18,7 @@
       "name": "Playtime is over",
       "userId": "11",
       "langId": ["lang-en"],
-      "catId": ["cat-kids"],
+      "categoryId": ["category-kids"],
       "hashtags": [],
       "votesUp": 8,
       "votesDown": 9,
@@ -30,7 +30,7 @@
       "name": "Tea",
       "userId": "11",
       "langId": ["lang-other"],
-      "catId": ["cat-anxiety"],
+      "categoryId": ["category-anxiety"],
       "hashtags": ["spanish"],
       "votesUp": 10,
       "votesDown": 2,
@@ -42,7 +42,7 @@
       "name": "When your program is a complete mess, but it does its job",
       "userId": "11",
       "langId": ["lang-en"],
-      "catId": ["cat-it", "cat-animals"],
+      "categoryId": ["category-it", "category-animals"],
       "hashtags": ["bird"],
       "votesUp": 10,
       "votesDown": 2,
@@ -54,7 +54,7 @@
       "name": "Secret toilet room",
       "userId": "11",
       "langId": ["lang-all"],
-      "catId": ["cat-pathetic", "cat-house"],
+      "categoryId": ["category-pathetic", "category-house"],
       "hashtags": ["toilet", "furniture", "russian"],
       "votesUp": 10,
       "votesDown": 2,
@@ -83,49 +83,49 @@
       "name": "other"
     },
     {
-      "id": "cat-animals",
+      "id": "category-animals",
       "type": "category",
       "name": "animals"
     },
     {
-      "id": "cat-dog",
+      "id": "category-dog",
       "type": "category",
       "name": "dog",
-      "autoSelect": "cat-animals"
+      "autoSelect": "category-animals"
     },
     {
-      "id": "cat-cat",
+      "id": "category-cat",
       "type": "category",
       "name": "cat",
-      "autoSelect": "cat-animals"
+      "autoSelect": "category-animals"
     },
     {
-      "id": "cat-beauty",
+      "id": "category-beauty",
       "type": "category",
       "name": "beauty"
     },
     {
-      "id": "cat-it",
+      "id": "category-it",
       "type": "category",
       "name": "IT"
     },
     {
-      "id": "cat-anxiety",
+      "id": "category-anxiety",
       "type": "category",
       "name": "anxiety"
     },
     {
-      "id": "cat-kids",
+      "id": "category-kids",
       "type": "category",
       "name": "kids"
     },
     {
-      "id": "cat-house",
+      "id": "category-house",
       "type": "category",
       "name": "house"
     },
     {
-      "id": "cat-pathetic",
+      "id": "category-pathetic",
       "type": "category",
       "name": "pathetic"
     }

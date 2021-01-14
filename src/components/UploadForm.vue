@@ -12,13 +12,13 @@
       </div>
       <div class="c-upload-form__form-group">
         <BaseCheckboxGroup
-          :items="langIdArr"
-          v-model="selectedLangIds"
+          :items="languageIdArray"
+          v-model="selectedLanguageIds"
           name="meme-langs"
         />
         <BaseCheckboxGroup
-          :items="catIdArr"
-          v-model="selectedCatIds"
+          :items="categoryIdArray"
+          v-model="selectedCategoryIds"
           name="meme-cats"
         />
       </div>
@@ -44,20 +44,20 @@ export default {
       tags: [],
       memeName: "",
       memeHashtags: "",
-      selectedLangIds: [],
-      selectedCatIds: [],
+      selectedLanguageIds: [],
+      selectedCategoryIds: [],
       dataToSend: {},
     };
   },
   computed: {
-    hashtagsArr: function() {
+    hashtagsArray: function() {
       return this.memeHashtags.split(/[ ,;.#]+/);
     },
-    langIdArr: function() {
+    languageIdArray: function() {
       return this.$store.state.tags.filter((t) => t.id.includes("lang-"));
     },
-    catIdArr: function() {
-      return this.$store.state.tags.filter((t) => t.id.includes("cat-"));
+    categoryIdArray: function() {
+      return this.$store.state.tags.filter((t) => t.id.includes("category-"));
     },
   },
   methods: {
@@ -68,9 +68,9 @@ export default {
         src: this.$store.state.droppedFiles,
         name: this.memeName,
         userId: "11",
-        langId: this.selectedLangIds,
-        catId: this.selectedCatIds,
-        hashtags: this.hashtagsArr,
+        languageId: this.selectedLanguageIds,
+        categoryId: this.selectedCategoryIds,
+        hashtags: this.hashtagsArray,
       };
     },
   },

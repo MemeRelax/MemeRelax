@@ -21,7 +21,7 @@
         </li>
         <li
           class="c-meme-info-tag-list-item"
-          v-for="cat in meme.catId"
+          v-for="cat in meme.categoryId"
           :key="cat + meme.id"
         >
           <MemeTag
