@@ -4,17 +4,15 @@
             xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping
             https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
 >
-    <class name="App\Entity\MediaObject">
-        <attribute name="contentUrl">
-            <group>media_object_read</group>
+    <class name="App\Entity\Category">
+        <attribute name="name">
+            <group>category:read</group>
+            <group>meme:read</group>
         </attribute>
 
-        <attribute name="blurhash">
-            <group>media_object_read</group>
-        </attribute>
-
-        <attribute name="scannedContent">
-            <group>media_object_read</group>
+        <attribute name="emoji">
+            <group>category:read</group>
+            <group>meme:read</group>
         </attribute>
     </class>
 </serializer>

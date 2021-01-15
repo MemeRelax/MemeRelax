@@ -4,12 +4,12 @@
            https://api-platform.com/schema/metadata/metadata-2.0.xsd"
 >
     <resource
-        class="App\Entity\MediaObject"
+        class="App\Entity\Image"
         iri="http://schema.org/MediaObject"
     >
         <collectionOperations>
             <collectionOperation name="post">
-                <attribute name="controller">App\Controller\CreateMediaObjectAction</attribute>
+                <attribute name="controller">App\Controller\CreateImageAction</attribute>
                 <attribute name="deserialize">false</attribute>
                 <attribute name="openapi_context">
                     <attribute name="requestBody">
@@ -38,7 +38,7 @@
 
         <attribute name="normalization_context">
             <attribute name="groups">
-                <attribute>media_object_read</attribute>
+                <attribute>image:read</attribute>
             </attribute>
         </attribute>
         <attribute name="pagination_items_per_page">10</attribute>

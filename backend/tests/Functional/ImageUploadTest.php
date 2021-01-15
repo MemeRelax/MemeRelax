@@ -21,12 +21,12 @@ use function uniqid;
 
 use const JSON_THROW_ON_ERROR;
 
-final class MediaObjectUploadTest extends WebTestCase
+final class ImageUploadTest extends WebTestCase
 {
     private const FIXTURE_PATH = __DIR__ . '/../fixtures/meme.jpg';
 
     /** @test */
-    public function it_uploads_a_media_object(): void
+    public function it_uploads_an_image(): void
     {
         // Arrange
         $client = self::createClient();
@@ -34,7 +34,7 @@ final class MediaObjectUploadTest extends WebTestCase
         // Act
         $uploadedFile = new UploadedFile($this->getUploadedImagePath(), 'meme.jpg', null, null, true);
 
-        $client->request('POST', '/media_objects', [], ['file' => $uploadedFile]);
+        $client->request('POST', '/images', [], ['file' => $uploadedFile]);
 
         // Assert
         $response = $client->getResponse();

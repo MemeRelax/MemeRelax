@@ -6,7 +6,7 @@ namespace App\EventSubscriber;
 
 use ApiPlatform\Core\EventListener\EventPriorities;
 use ApiPlatform\Core\Util\RequestAttributesExtractor;
-use App\Entity\MediaObject;
+use App\Entity\Image;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use function is_a;
 use function is_iterable;
 
-final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInterface
+final class ResolveImageContentUrlSubscriber implements EventSubscriberInterface
 {
     /**
      * @psalm-return array<string, array{string, int}>
@@ -43,22 +43,22 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
         }
 
         $attributes = RequestAttributesExtractor::extractAttributes($request);
-        if (!$attributes || !is_a($attributes['resource_class'], MediaObject::class, true)) {
+        if (!$attributes || !is_a($attributes['resource_class'], Image::class, true)) {
             return;
         }
 
-        $mediaObjects = $controllerResult;
+        $images = $controllerResult;
 
-        if (!is_iterable($mediaObjects)) {
-            $mediaObjects = [$mediaObjects];
+        if (!is_iterable($images)) {
+            $images = [$images];
         }
 
-        foreach ($mediaObjects as $mediaObject) {
-            if (!$mediaObject instanceof MediaObject) {
+        foreach ($images as $image) {
+            if (!$image instanceof Image) {
                 continue;
             }
 
-            $mediaObject->contentUrl = '/media/' . $mediaObject->getFilePath();
+            $image->contentUrl = '/media/' . $image->getFilePath();
         }
     }
 }

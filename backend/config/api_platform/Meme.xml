@@ -1,0 +1,21 @@
+<resources xmlns="https://api-platform.com/schema/metadata"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://api-platform.com/schema/metadata
+           https://api-platform.com/schema/metadata/metadata-2.0.xsd"
+>
+    <resource class="App\Entity\Meme">
+        <attribute name="normalization_context">
+            <attribute name="groups">
+                <attribute>meme:read</attribute>
+            </attribute>
+        </attribute>
+        <attribute name="pagination_items_per_page">10</attribute>
+
+        <property name="id" identifier="true" />
+        <property name="image" />
+        <property name="name" />
+        <property name="categories" />
+        <property name="languages" />
+        <property name="tags" />
+    </resource>
+</resources>

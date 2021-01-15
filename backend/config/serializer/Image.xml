@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping
+            https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
+>
+    <class name="App\Entity\Image">
+        <attribute name="contentUrl">
+            <group>image:read</group>
+            <group>meme:read</group>
+        </attribute>
+
+        <attribute name="blurhash">
+            <group>image:read</group>
+            <group>meme:read</group>
+        </attribute>
+
+        <attribute name="scannedContent">
+            <group>image:read</group>
+            <group>meme:read</group>
+        </attribute>
+    </class>
+</serializer>

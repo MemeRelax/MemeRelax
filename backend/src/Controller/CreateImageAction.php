@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Blurhash\BlurhashGenerator;
-use App\Entity\MediaObject;
+use App\Entity\Image;
 use App\Ocr\Scanner;
 use App\Uploader\Uploader;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-final class CreateMediaObjectAction
+final class CreateImageAction
 {
     public function __construct(
         private Uploader $uploader,
@@ -21,7 +21,7 @@ final class CreateMediaObjectAction
     ) {
     }
 
-    public function __invoke(Request $request): MediaObject
+    public function __invoke(Request $request): Image
     {
         $uploadedFile = $request->files->get('file');
         if (!$uploadedFile instanceof UploadedFile) {
@@ -30,7 +30,7 @@ final class CreateMediaObjectAction
 
         $file = $this->uploader->upload($uploadedFile);
 
-        return new MediaObject(
+        return new Image(
             $file->getFilename(),
             $this->blurhashGenerator->generate($file),
             $this->scanner->scan($file)

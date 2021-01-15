@@ -1,0 +1,39 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd"
+>
+    <entity name="App\Entity\Meme">
+        <id name="id" type="uuid" />
+
+        <one-to-one field="image" target-entity="App\Entity\Image">
+            <join-column name="image_id" nullable="false" />
+        </one-to-one>
+
+        <field name="name" />
+
+        <many-to-many field="categories" target-entity="App\Entity\Category">
+            <join-table name="meme_categories">
+                <join-columns>
+                    <join-column name="meme_id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="category_id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
+        <many-to-many field="languages" target-entity="App\Entity\Language">
+            <join-table name="meme_languages">
+                <join-columns>
+                    <join-column name="meme_id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="category_id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
+        <field name="tags" type="simple_array" />
+    </entity>
+</doctrine-mapping>
