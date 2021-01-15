@@ -11,20 +11,12 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Vich\UploaderBundle\Storage\StorageInterface;
 
 use function is_a;
 use function is_iterable;
 
 final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInterface
 {
-    private StorageInterface $storage;
-
-    public function __construct(StorageInterface $storage)
-    {
-        $this->storage = $storage;
-    }
-
     /**
      * @psalm-return array<string, array{string, int}>
      */
@@ -66,7 +58,7 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
                 continue;
             }
 
-            $mediaObject->contentUrl = $this->storage->resolveUri($mediaObject, 'file');
+            $mediaObject->contentUrl = '/media/' . $mediaObject->getFilePath();
         }
     }
 }
