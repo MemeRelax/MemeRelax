@@ -8,5 +8,5 @@ use Symfony\Component\HttpFoundation\File\File;
 
 interface Scanner
 {
-    public function scan(File $file): string;
+    public function scan(File $file): ?string;
 }
