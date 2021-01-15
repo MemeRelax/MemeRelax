@@ -71,8 +71,12 @@ export default {
   }
 }
 
+.c-meme__info {
+  width: 100%;
+}
+
 .c-meme__info-heading {
-  display: inline-block;
+  display: block;
   margin-bottom: spacer(3);
   padding: spacer(3);
   background-color: $color-primary;

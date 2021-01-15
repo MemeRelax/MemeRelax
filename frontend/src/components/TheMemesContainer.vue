@@ -39,6 +39,7 @@ export default {
 <style lang="scss" scoped>
 .c-memes-container {
   @include pad-tb-spacer(5);
+  background-color: $color-white;
 }
 
 .c-memes-container__container {

@@ -85,6 +85,7 @@ export default {
 .c-upload-form {
   @include pad-tb-spacer(4);
   padding-top: rem(65px);
+  background-color: $color-white;
 }
 
 .c-upload-form__container {

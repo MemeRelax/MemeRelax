@@ -60,6 +60,7 @@ export default {
 <style lang="scss" scoped>
 .c-filter {
   @include pad-tb-spacer(5);
+  background-color: $color-white;
 }
 
 .c-filter__container {
