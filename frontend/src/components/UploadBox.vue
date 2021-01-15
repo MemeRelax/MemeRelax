@@ -89,7 +89,7 @@ export default {
   min-height: rem(200px);
   padding: spacer(6);
   background-color: rgba($color-primary, 0.03);
-  outline: 5px dashed $color-primary-light;
+  outline: 5px dashed rgba($color-primary, 0.5);
   outline-offset: -20px;
   transition: all 0.5s;
 
