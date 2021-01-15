@@ -7,10 +7,12 @@
     <class name="App\Entity\Language">
         <attribute name="name">
             <group>language:read</group>
+            <group>meme:read</group>
         </attribute>
 
         <attribute name="emoji">
             <group>language:read</group>
+            <group>meme:read</group>
         </attribute>
     </class>
 </serializer>
