@@ -10,6 +10,7 @@ use App\Controller\CreateMediaObjectAction;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -56,11 +57,16 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 class MediaObject
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
      * @ORM\Id
+     * @ORM\Column(type="uuid")
      */
-    protected ?int $id = null;
+    protected Uuid $id;
+
+    /**
+     * @Assert\NotNull(groups={"media_object_create"})
+     * @Vich\UploadableField(mapping="media_object", fileNameProperty="filePath")
+     */
+    public File $file;
 
     /**
      * @ApiProperty(iri="http://schema.org/contentUrl")
@@ -68,17 +74,22 @@ class MediaObject
      */
     public ?string $contentUrl = null;
 
-    /**
-     * @Assert\NotNull(groups={"media_object_create"})
-     * @Vich\UploadableField(mapping="media_object", fileNameProperty="filePath")
-     */
-    public ?File $file = null;
-
     /** @ORM\Column(nullable=true) */
     public ?string $filePath = null;
 
-    public function getId(): ?int
+    public function __construct(File $file)
+    {
+        $this->id = Uuid::v4();
+        $this->file = $file;
+    }
+
+    public function getId(): Uuid
     {
         return $this->id;
+    }
+
+    public function getFile(): File
+    {
+        return $this->file;
     }
 }
