@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Blurhash\BlurhashGenerator;
 use App\Entity\MediaObject;
+use App\Ocr\Scanner;
 use App\Uploader\Uploader;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +14,11 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 final class CreateMediaObjectAction
 {
-    public function __construct(private Uploader $uploader, private BlurhashGenerator $blurhashGenerator)
-    {
+    public function __construct(
+        private Uploader $uploader,
+        private BlurhashGenerator $blurhashGenerator,
+        private Scanner $scanner
+    ) {
     }
 
     public function __invoke(Request $request): MediaObject
@@ -28,7 +32,8 @@ final class CreateMediaObjectAction
 
         return new MediaObject(
             $file->getFilename(),
-            $this->blurhashGenerator->generate($file)
+            $this->blurhashGenerator->generate($file),
+            $this->scanner->scan($file)
         );
     }
 }

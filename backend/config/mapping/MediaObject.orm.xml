@@ -8,5 +8,6 @@
 
         <field name="filePath" />
         <field name="blurhash" />
+        <field name="scannedContent" type="text" nullable="true" />
     </entity>
 </doctrine-mapping>

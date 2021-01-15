@@ -11,4 +11,8 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+
+    <stubs>
+        <file name="vendor/thiagoalessio/tesseract_ocr/src/FriendlyErrors.php" />
+    </stubs>
 </psalm>
