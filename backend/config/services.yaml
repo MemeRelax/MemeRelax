@@ -35,3 +35,10 @@ services:
             - '%kernel.project_dir%/public/media'
 
     App\Uploader\Uploader: '@App\Uploader\FilesystemUploader'
+
+    App\Blurhash\KornrunnerBlurhashGenerator:
+        arguments:
+            - 4
+            - 3
+
+    App\Blurhash\BlurhashGenerator: '@App\Blurhash\KornrunnerBlurhashGenerator'
