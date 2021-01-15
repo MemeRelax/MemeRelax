@@ -15,6 +15,7 @@
 
     <rule ref="Doctrine">
         <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+        <exclude name="Generic.WhiteSpace.ScopeIndent" />
     </rule>
     <rule ref="PSR2" />
     <rule ref="Generic.Formatting.SpaceAfterNot">

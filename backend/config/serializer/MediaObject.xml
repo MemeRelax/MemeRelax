@@ -12,5 +12,9 @@
         <attribute name="blurhash">
             <group>media_object_read</group>
         </attribute>
+
+        <attribute name="scannedContent">
+            <group>media_object_read</group>
+        </attribute>
     </class>
 </serializer>

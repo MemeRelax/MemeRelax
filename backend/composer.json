@@ -28,7 +28,8 @@
         "symfony/twig-bundle": "^5.2",
         "symfony/uid": "^5.2",
         "symfony/validator": "^5.2",
-        "symfony/yaml": "^5.2"
+        "symfony/yaml": "^5.2",
+        "thiagoalessio/tesseract_ocr": "^2.10"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",

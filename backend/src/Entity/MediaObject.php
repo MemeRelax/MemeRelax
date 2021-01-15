@@ -12,15 +12,12 @@ class MediaObject
 
     private Uuid $id;
 
-    private string $filePath;
-
-    private string $blurhash;
-
-    public function __construct(string $filePath, string $blurhash)
-    {
+    public function __construct(
+        private string $filePath,
+        private string $blurhash,
+        private ?string $scannedContent
+    ) {
         $this->id = Uuid::v4();
-        $this->filePath = $filePath;
-        $this->blurhash = $blurhash;
     }
 
     public function getId(): Uuid
@@ -36,5 +33,10 @@ class MediaObject
     public function getBlurhash(): string
     {
         return $this->blurhash;
+    }
+
+    public function getScannedContent(): ?string
+    {
+        return $this->scannedContent;
     }
 }

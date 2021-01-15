@@ -42,3 +42,9 @@ services:
             - 3
 
     App\Blurhash\BlurhashGenerator: '@App\Blurhash\KornrunnerBlurhashGenerator'
+
+    App\Ocr\TesseractScanner:
+        arguments:
+            - [eng, pol]
+
+    App\Ocr\Scanner: '@App\Ocr\TesseractScanner'

@@ -46,5 +46,6 @@
         <property name="id" identifier="true" />
         <property name="contentUrl" iri="http://schema.org/contentUrl" />
         <property name="blurhash" />
+        <property name="scannedContent" />
     </resource>
 </resources>
