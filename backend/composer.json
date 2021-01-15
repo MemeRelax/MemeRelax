@@ -40,6 +40,7 @@
         "symfony/symfony": "*"
     },
     "require-dev": {
+        "doctrine/coding-standard": "^8.2",
         "phpunit/phpunit": "^9.5",
         "vimeo/psalm": "4.4.0"
     },
