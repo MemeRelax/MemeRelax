@@ -59,10 +59,11 @@ export default {
 
 <style lang="scss" scoped>
 .c-filter {
-  @include pad-tb-spacer(4);
+  @include pad-tb-spacer(5);
 }
 
 .c-filter__container {
   @extend .container;
+  position: fixed; //desktop
 }
 </style>

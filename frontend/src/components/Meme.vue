@@ -59,11 +59,10 @@ export default {
 <style lang="scss" scoped>
 .c-meme {
   display: flex;
-  padding: spacer(3);
 }
 
 .c-meme__img {
-  flex: 0 1 60%;
+  flex: 0 0 60%;
   border: 20px solid $color-primary;
 
   & > img {

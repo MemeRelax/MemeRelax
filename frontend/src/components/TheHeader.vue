@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-header {
-  @include pad-tb-spacer(4);
+  @include pad-tb-spacer(2);
   background-color: $color-primary;
 }
 
@@ -31,9 +31,17 @@ export default {
 
 .c-header__main-heading {
   font-family: $font-special;
-  font-size: rem(38px);
+  font-size: rem(60px);
   color: $color-secondary;
   text-decoration: none;
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  // background-image: url("http://nothing-mundane.com/wp-content/uploads/2014/03/shibe_doge_wallpaper.png");
+  // background-size: cover;
+  // background-position: center;
+  // -webkit-text-fill-color: transparent;
+  // -webkit-text-stroke-width: 2px;
+  // -webkit-text-stroke-color: $color-secondary;
 }
 
 .c-header__access {

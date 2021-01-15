@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-memes-container {
-  @include pad-tb-spacer(4);
+  @include pad-tb-spacer(5);
 }
 
 .c-memes-container__container {
@@ -51,7 +51,7 @@ export default {
 }
 
 .c-memes-container__list-item:not(:last-child) {
-  margin-bottom: spacer(4);
+  margin-bottom: spacer(5);
 }
 
 .c-memes-container__empty {
