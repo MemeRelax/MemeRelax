@@ -2,7 +2,7 @@
   <div class="v-home">
     <TheHeader />
     <div class="v-home__container">
-      <TheMain />
+      <TheMemesContainer />
       <TheFilter />
     </div>
     <TheFooter />
@@ -13,7 +13,7 @@
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheFilter from "@/components/TheFilter.vue";
-import TheMain from "@/components/TheMain.vue";
+import TheMemesContainer from "@/components/TheMemesContainer.vue";
 
 export default {
   name: "Home",
@@ -21,7 +21,7 @@ export default {
     TheHeader,
     TheFooter,
     TheFilter,
-    TheMain,
+    TheMemesContainer,
   },
 };
 </script>

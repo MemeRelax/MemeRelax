@@ -15,7 +15,7 @@
 import Meme from "@/components/Meme.vue";
 
 export default {
-  name: "TheMain",
+  name: "TheMemesContainer",
   components: {
     Meme,
   },
