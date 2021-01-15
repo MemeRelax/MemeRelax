@@ -7,13 +7,10 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\CreateMediaObjectAction;
-use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Uid\Uuid;
 
 /**
- * @ORM\Entity
- *
  * @ApiResource(
  *     iri="http://schema.org/MediaObject",
  *     normalizationContext={
@@ -58,18 +55,11 @@ class MediaObject
      */
     public ?string $contentUrl = null;
 
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="uuid")
-     */
     private Uuid $id;
 
-    /** @ORM\Column */
     private string $filePath;
 
     /**
-     * @ORM\Column
-     *
      * @ApiProperty
      * @Groups({"media_object_read"})
      */
