@@ -42,7 +42,7 @@ export default {
 
 .c-header__main-heading {
   font-family: $font-special;
-  font-size: rem(60px);
+  font-size: rem(30px);
   color: $color-secondary;
   text-decoration: none;
   &.active {
@@ -53,6 +53,10 @@ export default {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: $color-secondary;
+  }
+
+  @include respond("md") {
+    font-size: rem(60px);
   }
 }
 

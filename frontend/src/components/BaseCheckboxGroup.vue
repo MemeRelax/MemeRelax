@@ -72,7 +72,7 @@ export default {
   font-weight: 400;
   white-space: nowrap;
   margin: 4px;
-  padding: spacer(2) spacer(3);
+  padding: spacer(1) spacer(2);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -81,6 +81,10 @@ export default {
   -webkit-tap-highlight-color: transparent;
   transition: all 0.2s;
   cursor: pointer;
+
+  @include respond("lg") {
+    padding: spacer(2) spacer(3);
+  }
 }
 
 .b-checkbox-group__input[type="checkbox"]:checked + .b-checkbox-group__label {

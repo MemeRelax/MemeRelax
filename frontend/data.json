@@ -6,7 +6,12 @@
       "name": "How to do smokey eyes",
       "userId": "11",
       "languageId": ["language-en"],
-      "categoryId": ["category-beauty", "category-pathetic"],
+      "categoryId": [
+        "category-beauty",
+        "category-pathetic",
+        "category-pathetic",
+        "category-pathetic"
+      ],
       "hashtags": [],
       "votesUp": 10,
       "votesDown": 2,
