@@ -80,6 +80,9 @@
         ],
         "analyse": [
             "vendor/bin/phpcs --colors",
+            "bin/console lint:yaml config --ansi",
+            "bin/console doctrine:schema:validate --skip-sync --ansi",
+            "bin/console lint:container --ansi",
             "vendor/bin/psalm"
         ],
         "auto-scripts": {
