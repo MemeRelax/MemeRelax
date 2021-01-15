@@ -1,8 +1,14 @@
 <template>
   <div class="c-header">
     <div class="c-header__container">
-      <router-link to="/" class="c-header__main-heading">Memerelax</router-link>
-
+      <router-link
+        to="/"
+        @mouseover="headingHover = true"
+        @mouseleave="headingHover = false"
+        class="c-header__main-heading"
+        :class="{ active: headingHover }"
+        >Memerelax</router-link
+      >
       <div class="c-header__access">
         <router-link to="/upload" class="c-header__link">Upload</router-link>
       </div>
@@ -13,6 +19,11 @@
 <script>
 export default {
   name: "TheHeader",
+  data() {
+    return {
+      headingHover: false,
+    };
+  },
 };
 </script>
 
@@ -34,14 +45,15 @@ export default {
   font-size: rem(60px);
   color: $color-secondary;
   text-decoration: none;
-  // -webkit-text-fill-color: transparent;
-  // -webkit-background-clip: text;
-  // background-image: url("http://nothing-mundane.com/wp-content/uploads/2014/03/shibe_doge_wallpaper.png");
-  // background-size: cover;
-  // background-position: center;
-  // -webkit-text-fill-color: transparent;
-  // -webkit-text-stroke-width: 2px;
-  // -webkit-text-stroke-color: $color-secondary;
+  &.active {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: url("http://nothing-mundane.com/wp-content/uploads/2014/03/shibe_doge_wallpaper.png");
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color-secondary;
+  }
 }
 
 .c-header__access {

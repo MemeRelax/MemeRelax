@@ -78,6 +78,7 @@ export default {
 <style lang="scss" scoped>
 .c-upload-box {
   @include pad-tb-spacer(4);
+  background-color: $color-white;
 }
 
 .c-upload-box__container {
