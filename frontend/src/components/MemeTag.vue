@@ -1,5 +1,5 @@
 <template>
-  <div class="c-meme-tag">
+  <div class="c-meme-tag" :class="type">
     {{ tagId || tagArr.name }}
   </div>
 </template>
@@ -39,7 +39,14 @@ export default {
   display: inline-block;
   margin: spacer(1) spacer(1);
   padding: spacer(2) spacer(3);
-  background-color: $color-secondary;
   line-height: 1;
+}
+
+.language {
+  background-color: rgba($color-primary, 0.3);
+}
+
+.category {
+  background-color: rgba($color-secondary, 0.3);
 }
 </style>

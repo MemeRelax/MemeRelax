@@ -13,6 +13,7 @@ export default {
 <style lang="scss">
 body {
   font-family: $font-main;
+  font-weight: 300;
   color: $color-dark;
 }
 </style>

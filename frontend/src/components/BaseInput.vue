@@ -54,6 +54,6 @@ export default {
   padding: spacer(3);
   width: 100%;
   font-family: inherit;
-  background-color: rgba($color-primary, 0.1);
+  background-color: rgba($color-primary, 0.03);
 }
 </style>
