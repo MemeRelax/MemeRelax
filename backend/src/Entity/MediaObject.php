@@ -48,7 +48,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *     },
  *     itemOperations={
  *         "get"
- *     }
+ *     },
+ *     attributes={"pagination_items_per_page"=10}
  * )
  * @Vich\Uploadable
  */
