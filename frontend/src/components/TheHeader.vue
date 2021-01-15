@@ -3,7 +3,9 @@
     <div class="c-header__container">
       <router-link to="/" class="c-header__main-heading">Memes</router-link>
 
-      <div class="c-header__access">Log in | Sign in</div>
+      <div class="c-header__access">
+        <router-link to="/upload" class="c-header__link">Upload</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -36,5 +38,17 @@ export default {
 
 .c-header__access {
   color: $color-white;
+}
+
+.c-header__link {
+  font-size: rem(20px);
+  &:link,
+  &:visited {
+    color: $color-white;
+  }
+  &:hover,
+  &:active {
+    color: $color-secondary;
+  }
 }
 </style>
