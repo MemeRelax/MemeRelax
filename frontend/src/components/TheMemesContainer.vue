@@ -1,8 +1,12 @@
 <template>
-  <div class="c-main">
-    <main class="c-main__container">
-      <ul v-if="memes.length" class="c-main__list">
-        <li class="c-main__list-item" v-for="meme in memes" :key="meme.id">
+  <div class="c-memes-container">
+    <main class="c-memes-container__container">
+      <ul v-if="memes.length" class="c-memes-container__list">
+        <li
+          class="c-memes-container__list-item"
+          v-for="meme in memes"
+          :key="meme.id"
+        >
           <Meme :meme="meme" />
         </li>
       </ul>
@@ -31,19 +35,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-main {
+.c-memes-container {
   @include pad-tb-spacer(4);
 }
 
-.c-main__container {
+.c-memes-container__container {
   @extend .container;
 }
 
-.c-main__list {
+.c-memes-container__list {
   list-style: none;
 }
 
-.c-main__list-item:not(:last-child) {
+.c-memes-container__list-item:not(:last-child) {
   margin-bottom: spacer(4);
 }
 </style>
