@@ -77,12 +77,16 @@
             "@auto-scripts"
         ],
         "analyse": [
+            "vendor/bin/phpcs --colors",
             "vendor/bin/psalm"
         ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
+        "fix": [
+            "vendor/bin/phpcbf --colors"
+        ],
         "test": [
             "vendor/bin/phpunit --colors=always"
         ]
