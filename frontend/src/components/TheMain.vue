@@ -1,11 +1,12 @@
 <template>
   <div class="c-main">
     <main class="c-main__container">
-      <ul class="c-main__list">
+      <ul v-if="memes.length" class="c-main__list">
         <li class="c-main__list-item" v-for="meme in memes" :key="meme.id">
           <Meme :meme="meme" />
         </li>
       </ul>
+      <div v-else>Nothing to show</div>
     </main>
   </div>
 </template>
