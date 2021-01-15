@@ -12,20 +12,16 @@ class Meme
 {
     private Uuid $id;
 
-    public MediaObject $image;
+    /** @psalm-suppress PropertyNotSetInConstructor */
+    public ?MediaObject $image;
 
-    public string $name;
+    /** @psalm-suppress PropertyNotSetInConstructor */
+    public ?string $name;
 
-    /**
-     * @var Collection
-     * @psalm-var Collection<int, Category>
-     */
+    /** @var Collection<int, Category> */
     private Collection $categories;
 
-    /**
-     * @var Collection
-     * @psalm-var Collection<int, Language>
-     */
+    /** @var Collection<int, Language> */
     private Collection $languages;
 
     /**
@@ -51,6 +47,7 @@ class Meme
         $this->categories->removeElement($category);
     }
 
+    /** @return Category[] */
     public function getCategories(): array
     {
         return $this->categories->getValues();
@@ -66,6 +63,7 @@ class Meme
         $this->languages->removeElement($language);
     }
 
+    /** @return Language[] */
     public function getLanguages(): array
     {
         return $this->languages->getValues();
