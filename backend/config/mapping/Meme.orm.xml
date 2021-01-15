@@ -6,7 +6,7 @@
     <entity name="App\Entity\Meme">
         <id name="id" type="uuid" />
 
-        <one-to-one field="image" target-entity="App\Entity\MediaObject">
+        <one-to-one field="image" target-entity="App\Entity\Image">
             <join-column name="image_id" nullable="false" />
         </one-to-one>
 

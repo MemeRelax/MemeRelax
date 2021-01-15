@@ -13,7 +13,7 @@ class Meme
     private Uuid $id;
 
     /** @psalm-suppress PropertyNotSetInConstructor */
-    public ?MediaObject $image;
+    public ?Image $image;
 
     /** @psalm-suppress PropertyNotSetInConstructor */
     public ?string $name;

@@ -6,7 +6,7 @@ namespace App\Entity;
 
 use Symfony\Component\Uid\Uuid;
 
-class MediaObject
+class Image
 {
     public ?string $contentUrl = null;
 
