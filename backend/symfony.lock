@@ -128,6 +128,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
+    "kornrunner/blurhash": {
+        "version": "v1.2.0"
+    },
     "laminas/laminas-code": {
         "version": "4.0.0"
     },

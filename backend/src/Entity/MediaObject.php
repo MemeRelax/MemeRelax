@@ -67,10 +67,19 @@ class MediaObject
     /** @ORM\Column */
     private string $filePath;
 
-    public function __construct(string $filePath)
+    /**
+     * @ORM\Column
+     *
+     * @ApiProperty
+     * @Groups({"media_object_read"})
+     */
+    private string $blurhash;
+
+    public function __construct(string $filePath, string $blurhash)
     {
         $this->id = Uuid::v4();
         $this->filePath = $filePath;
+        $this->blurhash = $blurhash;
     }
 
     public function getId(): Uuid
@@ -81,5 +90,10 @@ class MediaObject
     public function getFilePath(): string
     {
         return $this->filePath;
+    }
+
+    public function getBlurhash(): string
+    {
+        return $this->blurhash;
     }
 }
