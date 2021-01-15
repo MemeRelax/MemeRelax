@@ -59,11 +59,21 @@ export default {
 <style lang="scss" scoped>
 .c-meme {
   display: flex;
+  flex-direction: column;
+
+  @include respond("md") {
+    flex-direction: row;
+  }
 }
 
 .c-meme__img {
   flex: 0 0 60%;
   border: 20px solid $color-primary;
+  border-bottom: 0;
+
+  @include respond("md") {
+    border: 20px solid $color-primary;
+  }
 
   & > img {
     height: 100%;

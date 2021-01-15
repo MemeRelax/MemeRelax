@@ -60,11 +60,21 @@ export default {
 <style lang="scss" scoped>
 .c-filter {
   @include pad-tb-spacer(5);
+  grid-row: 1/2;
+  padding-bottom: 0;
   background-color: $color-white;
+
+  @include respond("lg") {
+    @include pad-tb-spacer(5);
+    grid-column: 2/3;
+  }
 }
 
 .c-filter__container {
   @extend .container;
-  position: fixed; //desktop
+
+  @include respond("lg") {
+    position: fixed; //desktop
+  }
 }
 </style>
