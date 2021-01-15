@@ -1,7 +1,7 @@
 <template>
   <div class="c-upload-form">
     <div class="c-upload-form__container">
-      <div class="c-upload-form__form-group">
+      <div class="u-form-group">
         <BaseInput
           v-model="memeName"
           type="text"
@@ -10,19 +10,23 @@
           label="Name"
         />
       </div>
-      <div class="c-upload-form__form-group">
+      <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['languageArray']"
           v-model="selectedLanguageIds"
-          name="meme-languagess"
+          name="meme-languages"
+          heading="Language"
         />
+      </div>
+      <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['categoryArray']"
           v-model="selectedCategoryIds"
-          name="meme-categoriess"
+          name="meme-categories"
+          heading="Category"
         />
       </div>
-      <div class="c-upload-form__form-group">
+      <div class="u-form-group">
         <BaseInput
           v-model="memeHashtags"
           id="meme-hashtags"
@@ -85,11 +89,5 @@ export default {
 
 .c-upload-form__container {
   @extend .container;
-}
-
-.c-upload-form__form-group {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: spacer(4);
 }
 </style>
