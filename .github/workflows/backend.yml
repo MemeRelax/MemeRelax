@@ -2,12 +2,8 @@ name: Backend build
 
 on:
     workflow_dispatch: ~ # Allow for manual dispatching
-    push:
-        paths:
-            - backend
-    pull_request:
-        paths:
-            - backend
+    push: ~
+    pull_request: ~
     schedule:
         -
             cron: "0 1 * * 6" # Run at 1am every Saturday
