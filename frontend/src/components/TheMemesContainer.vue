@@ -10,7 +10,9 @@
           <Meme :meme="meme" />
         </li>
       </ul>
-      <div v-else>Nothing to show</div>
+      <div v-else class="c-memes-container__empty">
+        Nothing to show, stop being so choosy
+      </div>
     </main>
   </div>
 </template>
@@ -41,6 +43,7 @@ export default {
 
 .c-memes-container__container {
   @extend .container;
+  height: 100%;
 }
 
 .c-memes-container__list {
@@ -49,5 +52,13 @@ export default {
 
 .c-memes-container__list-item:not(:last-child) {
   margin-bottom: spacer(4);
+}
+
+.c-memes-container__empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: rem(30px);
 }
 </style>

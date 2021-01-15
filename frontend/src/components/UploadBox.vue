@@ -87,13 +87,13 @@ export default {
 .c-upload-box__form {
   min-height: rem(200px);
   padding: spacer(6);
-  background-color: rgba($color-primary-lightest, 0.7);
+  background-color: rgba($color-primary, 0.03);
   outline: 5px dashed $color-primary-light;
   outline-offset: -20px;
   transition: all 0.5s;
 
   &.highlighted {
-    background-color: rgba($color-primary-lightest, 0.5);
+    background-color: rgba($color-primary, 0.07);
     outline: 8px dashed $color-primary;
     outline-offset: -30px;
   }

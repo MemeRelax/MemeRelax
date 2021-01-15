@@ -16,7 +16,7 @@
         >
           <MemeTag
             :tagArr="$store.getters['getTagById'](language)"
-            type="lang"
+            type="language"
           />
         </li>
         <li
@@ -60,11 +60,11 @@ export default {
 .c-meme {
   display: flex;
   padding: spacer(3);
-  border: $border-thin;
 }
 
 .c-meme__img {
   flex: 0 1 60%;
+  border: 20px solid $color-primary;
 
   & > img {
     height: 100%;
@@ -72,7 +72,17 @@ export default {
   }
 }
 
-.c-meme__info {
+.c-meme__info-heading {
+  display: inline-block;
+  margin-bottom: spacer(3);
+  padding: spacer(3);
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.c-meme__info-author,
+.c-meme__info-tag-list {
+  display: block;
   margin-left: spacer(3);
 }
 

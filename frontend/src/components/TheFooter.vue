@@ -15,6 +15,7 @@ export default {
 <style lang="scss" scoped>
 .c-footer {
   @include pad-tb-spacer(4);
+  color: $color-white;
   background-color: $color-primary;
 }
 

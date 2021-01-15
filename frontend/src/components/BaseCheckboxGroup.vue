@@ -45,8 +45,9 @@ li {
 label {
   display: inline-block;
   border: 1px solid rgba($color-primary, 0.3);
-  color: rgba($color-primary, 0.6);
+  color: rgba($color-primary, 0.8);
   font-size: rem(14px);
+  font-weight: 400;
   white-space: nowrap;
   margin: 4px;
   -webkit-touch-callout: none;
