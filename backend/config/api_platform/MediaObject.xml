@@ -1,0 +1,50 @@
+<resources xmlns="https://api-platform.com/schema/metadata"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://api-platform.com/schema/metadata
+           https://api-platform.com/schema/metadata/metadata-2.0.xsd"
+>
+    <resource
+        class="App\Entity\MediaObject"
+        iri="http://schema.org/MediaObject"
+    >
+        <collectionOperations>
+            <collectionOperation name="post">
+                <attribute name="controller">App\Controller\CreateMediaObjectAction</attribute>
+                <attribute name="deserialize">false</attribute>
+                <attribute name="openapi_context">
+                    <attribute name="requestBody">
+                        <attribute name="content">
+                            <attribute name="multipart/form-data">
+                                <attribute name="schema">
+                                    <attribute name="type">object</attribute>
+                                    <attribute name="properties">
+                                        <attribute name="file">
+                                            <attribute name="type">string</attribute>
+                                            <attribute name="format">binary</attribute>
+                                        </attribute>
+                                    </attribute>
+                                </attribute>
+                            </attribute>
+                        </attribute>
+                    </attribute>
+                </attribute>
+            </collectionOperation>
+            <collectionOperation name="get" />
+        </collectionOperations>
+
+        <itemOperations>
+            <itemOperation name="get" />
+        </itemOperations>
+
+        <attribute name="normalization_context">
+            <attribute name="groups">
+                <attribute>media_object_read</attribute>
+            </attribute>
+        </attribute>
+        <attribute name="pagination_items_per_page">10</attribute>
+
+        <property name="id" identifier="true" />
+        <property name="contentUrl" iri="http://schema.org/contentUrl" />
+        <property name="blurhash" />
+    </resource>
+</resources>

@@ -4,53 +4,13 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiProperty;
-use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\CreateMediaObjectAction;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Uid\Uuid;
 
-/**
- * @ApiResource(
- *     iri="http://schema.org/MediaObject",
- *     normalizationContext={
- *         "groups"={"media_object_read"}
- *     },
- *     collectionOperations={
- *         "post"={
- *             "controller"=CreateMediaObjectAction::class,
- *             "deserialize"=false,
- *             "validation_groups"={"Default", "media_object_create"},
- *             "openapi_context"={
- *                 "requestBody"={
- *                     "content"={
- *                         "multipart/form-data"={
- *                             "schema"={
- *                                 "type"="object",
- *                                 "properties"={
- *                                     "file"={
- *                                         "type"="string",
- *                                         "format"="binary"
- *                                     }
- *                                 }
- *                             }
- *                         }
- *                     }
- *                 }
- *             }
- *         },
- *         "get"
- *     },
- *     itemOperations={
- *         "get"
- *     },
- *     attributes={"pagination_items_per_page"=10}
- * )
- */
 class MediaObject
 {
     /**
-     * @ApiProperty(iri="http://schema.org/contentUrl")
      * @Groups({"media_object_read"})
      */
     public ?string $contentUrl = null;
@@ -60,7 +20,6 @@ class MediaObject
     private string $filePath;
 
     /**
-     * @ApiProperty
      * @Groups({"media_object_read"})
      */
     private string $blurhash;
