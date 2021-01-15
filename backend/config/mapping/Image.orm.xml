@@ -7,7 +7,7 @@
         <id name="id" type="uuid" />
 
         <field name="filePath" />
-        <field name="blurhash" />
+        <field name="blurhash" nullable="true" />
         <field name="scannedContent" type="text" nullable="true" />
     </entity>
 </doctrine-mapping>

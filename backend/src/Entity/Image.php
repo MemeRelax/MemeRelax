@@ -17,10 +17,10 @@ class Image implements EventsRecorder
 
     private ?string $scannedContent = null;
 
-    public function __construct(
-        private string $filePath,
-        private string $blurhash
-    ) {
+    private ?string $blurhash = null;
+
+    public function __construct(private string $filePath)
+    {
         $this->id = Uuid::v4();
 
         $this->recordEvent(new ImageUploaded($this->id));
@@ -36,7 +36,12 @@ class Image implements EventsRecorder
         return $this->filePath;
     }
 
-    public function getBlurhash(): string
+    public function setBlurhash(string $blurhash): void
+    {
+        $this->blurhash = $blurhash;
+    }
+
+    public function getBlurhash(): ?string
     {
         return $this->blurhash;
     }
