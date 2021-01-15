@@ -8,11 +8,8 @@ use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\CreateMediaObjectAction;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Uid\Uuid;
-use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
@@ -52,35 +49,28 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *     },
  *     attributes={"pagination_items_per_page"=10}
  * )
- * @Vich\Uploadable
  */
 class MediaObject
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="uuid")
-     */
-    protected Uuid $id;
-
-    /**
-     * @Assert\NotNull(groups={"media_object_create"})
-     * @Vich\UploadableField(mapping="media_object", fileNameProperty="filePath")
-     */
-    public File $file;
-
     /**
      * @ApiProperty(iri="http://schema.org/contentUrl")
      * @Groups({"media_object_read"})
      */
     public ?string $contentUrl = null;
 
-    /** @ORM\Column(nullable=true) */
-    public ?string $filePath = null;
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="uuid")
+     */
+    private Uuid $id;
 
-    public function __construct(File $file)
+    /** @ORM\Column */
+    private string $filePath;
+
+    public function __construct(string $filePath)
     {
         $this->id = Uuid::v4();
-        $this->file = $file;
+        $this->filePath = $filePath;
     }
 
     public function getId(): Uuid
@@ -88,8 +78,8 @@ class MediaObject
         return $this->id;
     }
 
-    public function getFile(): File
+    public function getFilePath(): string
     {
-        return $this->file;
+        return $this->filePath;
     }
 }
