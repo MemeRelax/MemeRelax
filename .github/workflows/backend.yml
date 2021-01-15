@@ -30,7 +30,7 @@ jobs:
                     coverage: none
 
             -   name: Install dependencies
-                run: composer install --no-scripts
+                run: composer install
 
             -   name: Run analysis
                 run: composer analyse
