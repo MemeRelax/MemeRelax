@@ -1,7 +1,7 @@
 <template>
   <div class="c-header">
     <div class="c-header__container">
-      <router-link to="/" class="c-header__main-heading">Memes</router-link>
+      <router-link to="/" class="c-header__main-heading">Memerelax</router-link>
 
       <div class="c-header__access">
         <router-link to="/upload" class="c-header__link">Upload</router-link>
