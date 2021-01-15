@@ -28,9 +28,6 @@
         "symfony/validator": "^5.2",
         "symfony/yaml": "^5.2"
     },
-    "require-dev": {
-        "vimeo/psalm": "4.4.0"
-    },
     "replace": {
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
@@ -41,6 +38,9 @@
     },
     "conflict": {
         "symfony/symfony": "*"
+    },
+    "require-dev": {
+        "vimeo/psalm": "4.4.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -74,9 +74,15 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "analyse": [
+            "vendor/bin/psalm"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        }
+        },
+        "test": [
+            "vendor/bin/phpunit --colors=always"
+        ]
     }
 }

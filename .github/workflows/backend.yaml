@@ -1,0 +1,43 @@
+name: Backend build
+
+on:
+    workflow_dispatch: ~ # Allow for manual dispatching
+    push:
+        paths:
+            - backend
+    pull_request:
+        paths:
+            - backend
+    schedule:
+        -
+            cron: "0 1 * * 6" # Run at 1am every Saturday
+
+defaults:
+    run:
+        working-directory: backend
+
+jobs:
+    build:
+        name: "PHP ${{ matrix.php }}"
+        runs-on: ubuntu-20.04
+        strategy:
+            matrix:
+                php: [8.0]
+
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: "${{ matrix.php }}"
+                    coverage: none
+
+            -   name: Install dependencies
+                run: composer install --no-scripts
+
+            -   name: Run analysis
+                run: composer analyse
+
+            -   name: Run tests
+                run: composer test
