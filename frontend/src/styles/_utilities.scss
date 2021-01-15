@@ -25,3 +25,9 @@
   margin-bottom: spacer(3);
   font-size: rem(24px);
 }
+
+.u-form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: spacer(4);
+}

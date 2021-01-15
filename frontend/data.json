@@ -63,71 +63,71 @@
   ],
   "tags": [
     {
-      "id": "language-all",
-      "type": "language",
-      "name": "all"
-    },
-    {
       "id": "language-pl",
       "type": "language",
-      "name": "pl"
+      "name": "🇵🇱 PL"
     },
     {
       "id": "language-en",
       "type": "language",
-      "name": "en"
+      "name": "🇬🇧 EN"
     },
     {
       "id": "language-other",
       "type": "language",
-      "name": "other"
+      "name": "🏳️ other"
+    },
+    {
+      "id": "language-all",
+      "type": "language",
+      "name": "🌍 none"
     },
     {
       "id": "category-animals",
       "type": "category",
-      "name": "animals"
+      "name": "🐾 animals"
     },
     {
       "id": "category-dog",
       "type": "category",
-      "name": "dog",
+      "name": "🐕 dog",
       "autoSelect": "category-animals"
     },
     {
       "id": "category-cat",
       "type": "category",
-      "name": "cat",
+      "name": "🐈 cat",
       "autoSelect": "category-animals"
     },
     {
       "id": "category-beauty",
       "type": "category",
-      "name": "beauty"
+      "name": "💄 beauty"
     },
     {
       "id": "category-it",
       "type": "category",
-      "name": "IT"
+      "name": "💾 IT"
     },
     {
       "id": "category-anxiety",
       "type": "category",
-      "name": "anxiety"
+      "name": "😵 anxiety"
     },
     {
       "id": "category-kids",
       "type": "category",
-      "name": "kids"
+      "name": "🍼 kids"
     },
     {
       "id": "category-house",
       "type": "category",
-      "name": "house"
+      "name": "🏠 house"
     },
     {
       "id": "category-pathetic",
       "type": "category",
-      "name": "pathetic"
+      "name": "🤦‍♀️ pathetic"
     }
   ]
 }

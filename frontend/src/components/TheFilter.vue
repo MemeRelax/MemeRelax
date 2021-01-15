@@ -1,16 +1,22 @@
 <template>
   <div class="c-filter">
     <div class="c-filter__container">
-      <BaseCheckboxGroup
-        :items="$store.getters['languageArray']"
-        v-model="selectedLanguageFilters"
-        name="meme-languagess"
-      />
-      <BaseCheckboxGroup
-        :items="$store.getters['categoryArray']"
-        v-model="selectedCategoryFilters"
-        name="meme-categoriess"
-      />
+      <div class="u-form-group">
+        <BaseCheckboxGroup
+          :items="$store.getters['languageArray']"
+          v-model="selectedLanguageFilters"
+          name="meme-languages"
+          heading="Language"
+        />
+      </div>
+      <div class="u-form-group">
+        <BaseCheckboxGroup
+          :items="$store.getters['categoryArray']"
+          v-model="selectedCategoryFilters"
+          name="meme-categories"
+          heading="Category"
+        />
+      </div>
     </div>
   </div>
 </template>
