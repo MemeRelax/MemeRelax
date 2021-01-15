@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Ocr;
 
 use Symfony\Component\HttpFoundation\File\File;
-use thiagoalessio\TesseractOCR\TesseractNotFoundException;
 use thiagoalessio\TesseractOCR\TesseractOCR;
 use Webmozart\Assert\Assert;
 
@@ -22,27 +21,22 @@ final class TesseractScanner implements Scanner
     {
     }
 
-    public function scan(File $file): ?string
+    public function scan(File $file): string
     {
-        try {
-            $tesseract = new TesseractOCR($file->getPathname());
-            $tesseract->lang(...$this->languages);
-            /** @psalm-suppress TooManyArguments */
-            $tesseract->allowlist(
-                range('A', 'Z'),
-                range('a', 'z'),
-                range('0', '9'),
-                ['.', ',', '?', '!', '-', '\'', '"', ' ']
-            );
+        $tesseract = new TesseractOCR($file->getPathname());
+        $tesseract->lang(...$this->languages);
+        /** @psalm-suppress TooManyArguments */
+        $tesseract->allowlist(
+            range('A', 'Z'),
+            range('a', 'z'),
+            range('0', '9'),
+            ['.', ',', '?', '!', '-', '\'', '"', ' ']
+        );
 
-            $result = $tesseract->run();
+        $result = $tesseract->run();
 
-            Assert::string($result);
+        Assert::string($result);
 
-            return $result;
-        } catch (TesseractNotFoundException) {
-            // TODO: Log this somewhere
-            return null;
-        }
+        return $result;
     }
 }
