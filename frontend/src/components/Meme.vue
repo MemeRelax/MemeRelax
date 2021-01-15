@@ -5,31 +5,33 @@
     </div>
     <div class="c-meme__info">
       <h2 class="c-meme__info-heading">{{ meme.name }}</h2>
-      <span class="c-meme__info-author"
-        >Added by <MemeTag :tagId="meme.userId" type="author"
-      /></span>
-      <ul class="c-meme__info-tag-list">
-        <li
-          class="c-meme-info-tag-list-item"
-          v-for="language in meme.languageId"
-          :key="language + meme.id"
-        >
-          <MemeTag
-            :tagArr="$store.getters['getTagById'](language)"
-            type="language"
-          />
-        </li>
-        <li
-          class="c-meme-info-tag-list-item"
-          v-for="category in meme.categoryId"
-          :key="category + meme.id"
-        >
-          <MemeTag
-            :tagArr="$store.getters['getTagById'](category)"
-            type="category"
-          />
-        </li>
-      </ul>
+      <div class="c-meme-info__details">
+        <span class="c-meme__info-author"
+          >Added by <MemeTag :tagId="meme.userId" type="author"
+        /></span>
+        <ul class="c-meme__info-tag-list">
+          <li
+            class="c-meme-info-tag-list-item"
+            v-for="language in meme.languageId"
+            :key="language + meme.id"
+          >
+            <MemeTag
+              :tagArr="$store.getters['getTagById'](language)"
+              type="language"
+            />
+          </li>
+          <li
+            class="c-meme-info-tag-list-item"
+            v-for="category in meme.categoryId"
+            :key="category + meme.id"
+          >
+            <MemeTag
+              :tagArr="$store.getters['getTagById'](category)"
+              type="category"
+            />
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -93,10 +95,25 @@ export default {
   color: $color-white;
 }
 
+.c-meme-info__details {
+  display: flex;
+
+  @include respond("md") {
+    display: block;
+  }
+}
+
+.c-meme__info-author {
+  flex-shrink: 0;
+}
+
 .c-meme__info-author,
 .c-meme__info-tag-list {
   display: block;
-  margin-left: spacer(3);
+
+  @include respond("md") {
+    margin-left: spacer(3);
+  }
 }
 
 .c-meme__info-tag-list {

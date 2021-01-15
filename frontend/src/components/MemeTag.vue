@@ -38,8 +38,12 @@ export default {
 .c-meme-tag {
   display: inline-block;
   margin: spacer(1) spacer(1);
-  padding: spacer(2) spacer(3);
+  padding: spacer(1) spacer(2);
   line-height: 1;
+
+  @include respond("lg") {
+    padding: spacer(2) spacer(3);
+  }
 }
 
 .language {
