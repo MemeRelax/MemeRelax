@@ -34,7 +34,7 @@ final class ImageUploadTest extends WebTestCase
         // Act
         $uploadedFile = new UploadedFile($this->getUploadedImagePath(), 'meme.jpg', null, null, true);
 
-        $client->request('POST', '/images', [], ['file' => $uploadedFile]);
+        $client->request('POST', '/api/images', [], ['file' => $uploadedFile]);
 
         // Assert
         $response = $client->getResponse();
