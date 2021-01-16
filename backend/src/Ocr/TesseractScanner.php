@@ -6,8 +6,9 @@ namespace App\Ocr;
 
 use Symfony\Component\HttpFoundation\File\File;
 use thiagoalessio\TesseractOCR\TesseractOCR;
-use Webmozart\Assert\Assert;
 
+use function assert;
+use function is_string;
 use function range;
 
 final class TesseractScanner implements Scanner
@@ -34,8 +35,7 @@ final class TesseractScanner implements Scanner
         );
 
         $result = $tesseract->run();
-
-        Assert::string($result);
+        assert(is_string($result));
 
         return $result;
     }
