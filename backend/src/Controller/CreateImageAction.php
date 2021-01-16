@@ -26,7 +26,7 @@ final class CreateImageAction
 
         $file = $this->uploader->upload($uploadedFile);
 
-        return new Image($file->getFilename(), $this->getDimensions($file));
+        return new Image($file->getFilename(), $this->getDimensions($file), $this->getSize($file));
     }
 
     private function getDimensions(File $file): Image\Dimensions
@@ -36,5 +36,10 @@ final class CreateImageAction
         $height = imagesy($image);
 
         return new Image\Dimensions(new Image\Pixel($width), new Image\Pixel($height));
+    }
+
+    private function getSize(File $file): Image\Size
+    {
+        return Image\Size::fromBytes(\filesize($file->getPathname()));
     }
 }

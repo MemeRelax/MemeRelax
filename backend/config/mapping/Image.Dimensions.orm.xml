@@ -4,7 +4,7 @@
                   https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd"
 >
     <embeddable name="App\Entity\Image\Dimensions">
-        <field name="width" type="pixel_size" />
-        <field name="height" type="pixel_size" />
+        <field name="width" type="image_pixel" />
+        <field name="height" type="image_pixel" />
     </embeddable>
 </doctrine-mapping>

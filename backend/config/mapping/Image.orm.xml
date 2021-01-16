@@ -9,6 +9,7 @@
         <field name="filePath" />
         <field name="uploadedAt" type="datetime_immutable" />
         <embedded name="dimensions" class="App\Entity\Image\Dimensions" />
+        <field name="size" type="image_size" />
         <field name="blurhash" nullable="true" />
         <field name="scannedContent" type="text" nullable="true" />
     </entity>
