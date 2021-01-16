@@ -63,6 +63,11 @@ jobs:
             -   name: Run analysis
                 run: composer analyse
 
+            -   name: Set up JWT keys
+                run: |
+                    cp config/jwt/private.pem.dist config/jwt/private.pem
+                    cp config/jwt/public.pem.dist config/jwt/public.pem
+
             -   name: Setup database
                 run: bin/console doctrine:schema:create
 
