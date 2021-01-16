@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+
+use function array_unique;
 
 class User implements UserInterface
 {
@@ -12,6 +16,7 @@ class User implements UserInterface
 
     private ?string $password = null;
 
+    /** @var string[] */
     private array $roles = [];
 
     public function getId(): ?int
@@ -24,13 +29,14 @@ class User implements UserInterface
         return (string) $this->username;
     }
 
-    public function setUsername(string $username): self
+    public function setUsername(string $username): void
     {
         $this->username = $username;
-
-        return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getRoles(): array
     {
         $roles = $this->roles;
@@ -39,11 +45,12 @@ class User implements UserInterface
         return array_unique($roles);
     }
 
-    public function setRoles(array $roles): self
+    /**
+     * @param string[] $roles
+     */
+    public function setRoles(array $roles): void
     {
         $this->roles = $roles;
-
-        return $this;
     }
 
     public function getPassword(): string

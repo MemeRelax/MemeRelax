@@ -1,19 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Language;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 final class LanguageFixtures extends Fixture
 {
-    public function __construct(private UserPasswordEncoderInterface $encoder)
-    {
-
-    }
-
     public function load(ObjectManager $manager): void
     {
         $languages = [
