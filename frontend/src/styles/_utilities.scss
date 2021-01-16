@@ -1,22 +1,23 @@
-.container {
+.u-container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: bp(lg)) {
-  .container {
+  .u-container {
     max-width: 970px;
   }
 }
 @media (min-width: bp(xl)) {
-  .container {
+  .u-container {
     max-width: 1170px;
   }
 }
 
-.container-columns {
+.u-container-columns {
   display: grid;
+  background-color: $color-white;
 
   @include respond("lg") {
     grid-template-columns: 3fr minmax(rem(300px), 1fr);

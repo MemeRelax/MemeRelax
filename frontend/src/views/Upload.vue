@@ -34,6 +34,6 @@ export default {
 }
 
 .v-upload__container {
-  @extend .container-columns;
+  @extend .u-container-columns;
 }
 </style>

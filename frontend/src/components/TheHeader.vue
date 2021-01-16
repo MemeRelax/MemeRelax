@@ -34,7 +34,7 @@ export default {
 }
 
 .c-header__container {
-  @extend .container;
+  @extend .u-container;
   display: flex;
   justify-content: space-between;
   align-items: center;

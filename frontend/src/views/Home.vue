@@ -34,6 +34,6 @@ export default {
 }
 
 .v-home__container {
-  @extend .container-columns;
+  @extend .u-container-columns;
 }
 </style>
