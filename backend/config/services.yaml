@@ -51,3 +51,8 @@ services:
             - [eng, pol]
 
     App\Ocr\Scanner: '@App\Ocr\TesseractScanner'
+
+    App\Swagger\AuthenticationEndpointNormalizer:
+        decorates: 'api_platform.swagger.normalizer.documentation'
+        arguments: ['@.inner']
+        autoconfigure: false
