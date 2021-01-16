@@ -6,9 +6,15 @@ namespace App\Controller;
 
 use App\Entity\Image;
 use App\Uploader\Uploader;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+
+use function filesize;
+use function imagecreatefromstring;
+use function imagesx;
+use function imagesy;
 
 final class CreateImageAction
 {
@@ -25,6 +31,20 @@ final class CreateImageAction
 
         $file = $this->uploader->upload($uploadedFile);
 
-        return new Image($file->getFilename());
+        return new Image($file->getFilename(), $this->getDimensions($file), $this->getSize($file));
+    }
+
+    private function getDimensions(File $file): Image\Dimensions
+    {
+        $image = imagecreatefromstring($file->getContent());
+        $width = imagesx($image);
+        $height = imagesy($image);
+
+        return new Image\Dimensions(new Image\Pixel($width), new Image\Pixel($height));
+    }
+
+    private function getSize(File $file): Image\Size
+    {
+        return Image\Size::fromBytes(filesize($file->getPathname()));
     }
 }

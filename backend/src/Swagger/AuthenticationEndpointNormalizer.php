@@ -19,8 +19,6 @@ final class AuthenticationEndpointNormalizer implements NormalizerInterface
 
     /**
      * @param mixed $data
-     *
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint
      */
     public function supportsNormalization($data, ?string $format = null): bool
     {
@@ -29,9 +27,6 @@ final class AuthenticationEndpointNormalizer implements NormalizerInterface
 
     /**
      * @param mixed $object
-     *
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ReturnTypeHint
      */
     public function normalize($object, ?string $format = null, array $context = []): array
     {

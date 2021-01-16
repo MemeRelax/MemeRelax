@@ -2,9 +2,10 @@ doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
 
-        # IMPORTANT: You MUST configure your server version,
-        # either here or in the DATABASE_URL env var (see .env file)
-        #server_version: '13'
+        types:
+            !php/const App\Doctrine\Type\ImagePixelType::NAME: App\Doctrine\Type\ImagePixelType
+            !php/const App\Doctrine\Type\ImageSizeType::NAME: App\Doctrine\Type\ImageSizeType
+
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware

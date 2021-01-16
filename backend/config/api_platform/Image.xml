@@ -5,7 +5,7 @@
 >
     <resource
         class="App\Entity\Image"
-        iri="http://schema.org/MediaObject"
+        iri="https://schema.org/MediaObject"
     >
         <collectionOperations>
             <collectionOperation name="post">
@@ -44,7 +44,10 @@
         <attribute name="pagination_items_per_page">10</attribute>
 
         <property name="id" identifier="true" />
-        <property name="contentUrl" iri="http://schema.org/contentUrl" />
+        <property name="contentUrl" iri="https://schema.org/contentUrl" />
+        <property name="uploadedAt" iri="https://schema.org/DateTime" />
+        <property name="dimensions" />
+        <property name="contentSize" />
         <property name="blurhash" />
         <property name="scannedContent" />
     </resource>
