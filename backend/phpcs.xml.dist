@@ -16,6 +16,8 @@
     <rule ref="Doctrine">
         <exclude name="Generic.Formatting.MultipleStatementAlignment" />
         <exclude name="Generic.WhiteSpace.ScopeIndent" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint" />
     </rule>
     <rule ref="PSR2" />
     <rule ref="Generic.Formatting.SpaceAfterNot">

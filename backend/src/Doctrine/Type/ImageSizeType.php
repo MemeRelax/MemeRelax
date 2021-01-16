@@ -8,6 +8,9 @@ use App\Entity\Image\Size;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
+use function assert;
+use function is_int;
+
 final class ImageSizeType extends Type
 {
     public const NAME = 'image_size';
@@ -35,5 +38,4 @@ final class ImageSizeType extends Type
     {
         return self::NAME;
     }
-
 }

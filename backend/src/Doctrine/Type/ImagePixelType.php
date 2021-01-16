@@ -8,6 +8,9 @@ use App\Entity\Image\Pixel;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
+use function assert;
+use function is_int;
+
 final class ImagePixelType extends Type
 {
     public const NAME = 'image_pixel';
@@ -35,5 +38,4 @@ final class ImagePixelType extends Type
     {
         return self::NAME;
     }
-
 }

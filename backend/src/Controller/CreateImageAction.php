@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+use function filesize;
+use function imagecreatefromstring;
+use function imagesx;
+use function imagesy;
+
 final class CreateImageAction
 {
     public function __construct(private Uploader $uploader)
@@ -40,6 +45,6 @@ final class CreateImageAction
 
     private function getSize(File $file): Image\Size
     {
-        return Image\Size::fromBytes(\filesize($file->getPathname()));
+        return Image\Size::fromBytes(filesize($file->getPathname()));
     }
 }

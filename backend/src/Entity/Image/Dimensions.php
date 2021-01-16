@@ -10,7 +10,6 @@ final class Dimensions
         private Pixel $width,
         private Pixel $height
     ) {
-
     }
 
     public function getWidth(): Pixel

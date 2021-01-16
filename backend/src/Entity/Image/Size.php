@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Entity\Image;
 
+use DomainException;
+
+use function round;
+
 final class Size
 {
     private const UNITS = ['B', 'KiB', 'MiB'];
@@ -13,7 +17,7 @@ final class Size
     private function __construct(int $bytes)
     {
         if ($bytes <= 0) {
-            throw new \DomainException('Size must be greater than 0.');
+            throw new DomainException('Size must be greater than 0.');
         }
 
         $this->bytes = $bytes;
