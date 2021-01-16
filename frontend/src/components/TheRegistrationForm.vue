@@ -1,6 +1,6 @@
 <template>
-  <div class="c-login-form">
-    <div class="c-login-form__container">
+  <div class="c-registration-form">
+    <div class="c-registration-form__container">
       <div class="u-form-group">
         <BaseInput
           v-model="login"
@@ -20,7 +20,7 @@
         />
       </div>
       <div class="u-form-group">
-        <BaseButton>Log in</BaseButton>
+        <BaseButton>Register</BaseButton>
       </div>
     </div>
   </div>
@@ -38,12 +38,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-login-form {
+.c-registration-form {
   @include pad-tb-spacer(4);
   height: 100%;
 }
 
-.c-login-form__container {
+.c-registration-form__container {
   @extend .u-container;
   display: flex;
   flex-direction: column;
