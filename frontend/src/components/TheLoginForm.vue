@@ -7,7 +7,7 @@
           type="text"
           id="login-input"
           name="login-input"
-          label="Login"
+          label="Login / email"
         />
       </div>
       <div class="u-form-group">
