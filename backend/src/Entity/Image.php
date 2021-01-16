@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Entity\Image\Dimensions;
 use App\Event\ImageUploaded;
 use Symfony\Component\Uid\Uuid;
 
@@ -21,7 +22,7 @@ class Image implements EventsRecorder
 
     private ?string $blurhash = null;
 
-    public function __construct(private string $filePath)
+    public function __construct(private string $filePath, private Dimensions $dimensions)
     {
         $this->id = Uuid::v4();
         $this->uploadedAt = new \DateTimeImmutable();
@@ -37,6 +38,11 @@ class Image implements EventsRecorder
     public function getFilePath(): string
     {
         return $this->filePath;
+    }
+
+    public function getDimensions(): Dimensions
+    {
+        return $this->dimensions;
     }
 
     public function getUploadedAt(): \DateTimeImmutable
