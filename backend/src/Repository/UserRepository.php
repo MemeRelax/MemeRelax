@@ -17,8 +17,8 @@ use function sprintf;
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
  * @method User|null findOneBy(array $criteria, array $orderBy = null)
- * @method list<User> findAll()
- * @method list<User> findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @psalm-method list<User> findAll()
+ * @psalm-method list<User> findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 final class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
