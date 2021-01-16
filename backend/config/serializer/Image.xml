@@ -10,6 +10,11 @@
             <group>meme:read</group>
         </attribute>
 
+        <attribute name="dimensions">
+            <group>image:read</group>
+            <group>meme:read</group>
+        </attribute>
+
         <attribute name="uploadedAt">
             <group>image:read</group>
         </attribute>
