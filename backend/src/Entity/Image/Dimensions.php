@@ -7,18 +7,18 @@ namespace App\Entity\Image;
 final class Dimensions
 {
     public function __construct(
-        private PixelSize $width,
-        private PixelSize $height
+        private Pixel $width,
+        private Pixel $height
     ) {
 
     }
 
-    public function getWidth(): PixelSize
+    public function getWidth(): Pixel
     {
         return $this->width;
     }
 
-    public function getHeight(): PixelSize
+    public function getHeight(): Pixel
     {
         return $this->height;
     }

@@ -32,7 +32,7 @@ final class ImageDimensionsNormalizer implements NormalizerInterface, Denormaliz
     {
         assert(isset($data['width'], $data['height']));
 
-        return new Image\Dimensions(new Image\PixelSize($data['width']), new Image\PixelSize($data['height']));
+        return new Image\Dimensions(new Image\Pixel($data['width']), new Image\Pixel($data['height']));
     }
 
     public function supportsDenormalization($data, string $type, string $format = null): bool

@@ -3,7 +3,7 @@ doctrine:
         url: '%env(resolve:DATABASE_URL)%'
 
         types:
-            !php/const App\Doctrine\Type\PixelSizeType::NAME: App\Doctrine\Type\PixelSizeType
+            !php/const App\Doctrine\Type\PixelType::NAME: App\Doctrine\Type\PixelType
 
     orm:
         auto_generate_proxy_classes: true

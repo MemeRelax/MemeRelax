@@ -35,6 +35,6 @@ final class CreateImageAction
         $width = imagesx($image);
         $height = imagesy($image);
 
-        return new Image\Dimensions(new Image\PixelSize($width), new Image\PixelSize($height));
+        return new Image\Dimensions(new Image\Pixel($width), new Image\Pixel($height));
     }
 }
