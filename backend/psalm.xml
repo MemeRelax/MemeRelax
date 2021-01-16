@@ -15,4 +15,12 @@
     <stubs>
         <file name="vendor/thiagoalessio/tesseract_ocr/src/FriendlyErrors.php" />
     </stubs>
+
+    <issueHandlers>
+        <InvalidDocblock>
+            <errorLevel type="suppress">
+                <file name="vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php" />
+            </errorLevel>
+        </InvalidDocblock>
+    </issueHandlers>
 </psalm>
