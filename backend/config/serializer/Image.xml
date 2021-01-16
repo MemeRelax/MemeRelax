@@ -10,6 +10,10 @@
             <group>meme:read</group>
         </attribute>
 
+        <attribute name="uploadedAt">
+            <group>image:read</group>
+        </attribute>
+
         <attribute name="blurhash">
             <group>image:read</group>
             <group>meme:read</group>

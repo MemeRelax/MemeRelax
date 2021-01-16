@@ -15,6 +15,8 @@ class Image implements EventsRecorder
 
     private Uuid $id;
 
+    private \DateTimeImmutable $uploadedAt;
+
     private ?string $scannedContent = null;
 
     private ?string $blurhash = null;
@@ -22,6 +24,7 @@ class Image implements EventsRecorder
     public function __construct(private string $filePath)
     {
         $this->id = Uuid::v4();
+        $this->uploadedAt = new \DateTimeImmutable();
 
         $this->recordEvent(new ImageUploaded($this->id));
     }
@@ -34,6 +37,11 @@ class Image implements EventsRecorder
     public function getFilePath(): string
     {
         return $this->filePath;
+    }
+
+    public function getUploadedAt(): \DateTimeImmutable
+    {
+        return $this->uploadedAt;
     }
 
     public function setBlurhash(string $blurhash): void

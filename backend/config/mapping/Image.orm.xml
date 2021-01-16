@@ -7,6 +7,7 @@
         <id name="id" type="uuid" />
 
         <field name="filePath" />
+        <field name="uploadedAt" type="datetime_immutable" />
         <field name="blurhash" nullable="true" />
         <field name="scannedContent" type="text" nullable="true" />
     </entity>
