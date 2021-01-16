@@ -62,7 +62,6 @@ export default {
   @include pad-tb-spacer(5);
   grid-row: 1/2;
   padding-bottom: 0;
-  background-color: $color-white;
 
   @include respond("lg") {
     @include pad-tb-spacer(5);
@@ -71,7 +70,7 @@ export default {
 }
 
 .c-filter__container {
-  @extend .container;
+  @extend .u-container;
 
   @include respond("lg") {
     position: fixed; //desktop

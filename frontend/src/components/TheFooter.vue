@@ -20,6 +20,6 @@ export default {
 }
 
 .c-footer__container {
-  @extend .container;
+  @extend .u-container;
 }
 </style>
