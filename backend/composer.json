@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
         "kornrunner/blurhash": "^1.2",
+        "lexik/jwt-authentication-bundle": "^2.10",
         "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
         "symfony/asset": "^5.2",
@@ -46,6 +47,7 @@
     },
     "require-dev": {
         "doctrine/coding-standard": "^8.2",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "^5.2",
         "symfony/debug-bundle": "^5.2",
