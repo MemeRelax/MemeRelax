@@ -5,23 +5,19 @@ declare(strict_types=1);
 namespace App\Tests\Functional;
 
 use PHPUnit\Framework\Assert;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use function basename;
 use function copy;
 use function dirname;
 use function is_dir;
-use function json_decode;
 use function md5;
 use function mkdir;
 use function sprintf;
 use function sys_get_temp_dir;
 use function uniqid;
 
-use const JSON_THROW_ON_ERROR;
-
-final class ImageUploadTest extends WebTestCase
+final class ImageUploadTest extends FunctionalTestCase
 {
     private const FIXTURE_PATH = __DIR__ . '/../fixtures/meme.jpg';
 
@@ -29,18 +25,18 @@ final class ImageUploadTest extends WebTestCase
     public function it_uploads_an_image(): void
     {
         // Arrange
-        $client = self::createClient();
+        $token = $this->loadAndAuthenticateUser('memerelax', 'memerelax');
 
         // Act
         $uploadedFile = new UploadedFile($this->getUploadedImagePath(), 'meme.jpg', null, null, true);
 
-        $client->request('POST', '/api/images', [], ['file' => $uploadedFile]);
+        $response = $this->client->request('POST', '/api/images', [
+            'extra' => ['files' => ['file' => $uploadedFile]],
+            'auth_bearer' => $token,
+        ]);
 
         // Assert
-        $response = $client->getResponse();
-        Assert::assertTrue($response->isSuccessful());
-
-        $responseData = json_decode($response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        $responseData = $response->toArray();
         Assert::assertArrayHasKey('contentUrl', $responseData);
     }
 
