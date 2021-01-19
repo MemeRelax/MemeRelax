@@ -5,33 +5,37 @@
         <BaseInput
           v-model="memeName"
           type="text"
-          :id="`memename${index}`"
-          name="meme-name"
+          :id="`meme-name-${index}`"
+          :name="`meme-name-${index}`"
           label="Name"
+          :index="index"
         />
       </div>
       <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['languageArray']"
           v-model="selectedLanguageIds"
-          name="meme-languages"
+          :name="`meme-language-${index}`"
           heading="Language"
+          :index="index"
         />
       </div>
       <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['categoryArray']"
           v-model="selectedCategoryIds"
-          name="meme-categories"
+          :name="`meme-category-${index}`"
           heading="Category"
+          :index="index"
         />
       </div>
       <div class="u-form-group">
         <BaseInput
           v-model="memeHashtags"
-          id="meme-hashtags"
-          name="meme-hashtags"
+          :id="`meme-hashtags-${index}`"
+          :name="`meme-hashtags-${index}`"
           label="Hashtags"
+          :index="index"
           textarea
         />
       </div>
