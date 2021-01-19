@@ -5,18 +5,18 @@
       <li
         class="b-checkbox-group__list-item"
         v-for="tag in items"
-        :key="`${tag.id}-tag`"
+        :key="`${tag.id}-tag-${index}`"
       >
         <input
           class="b-checkbox-group__input"
           v-bind="$attrs"
           type="checkbox"
-          :id="tag.id"
+          :id="`${tag.id}-${index}`"
           :value="tag.id"
           v-model="selectedTags"
           @change="$emit('update:modelValue', selectedTags)"
         />
-        <label class="b-checkbox-group__label" :for="tag.id">{{
+        <label class="b-checkbox-group__label" :for="`${tag.id}-${index}`">{{
           tag.name
         }}</label>
       </li>
@@ -36,6 +36,9 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    index: {
+      type: Number,
     },
   },
   data: function() {

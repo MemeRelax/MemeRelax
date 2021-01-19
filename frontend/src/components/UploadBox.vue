@@ -36,15 +36,17 @@
           Error!
         </div>
       </form>
-      <div
-        v-for="(file, index) in droppedFiles"
-        :key="file.name"
-        class="c-upload-box__columns"
-      >
-        <UploadPreview :file="file" :index="index" />
-        <UploadForm :index="index" />
+      <div v-if="droppedFiles" class="c-upload-box__actions">
+        <div
+          v-for="(file, index) in droppedFiles"
+          :key="file.name"
+          class="c-upload-box__columns"
+        >
+          <UploadPreview :file="file" :index="index" />
+          <UploadForm :index="index" />
+        </div>
+        <BaseButton @click="sendMemes">Save</BaseButton>
       </div>
-      <BaseButton @click="sendNewMeme">Save</BaseButton>
     </div>
   </div>
 </template>
@@ -78,6 +80,9 @@ export default {
     },
     removeHighlightArea() {
       this.highightedArea = false;
+    },
+    sendMemes() {
+      console.log("save clicked");
     },
   },
 };

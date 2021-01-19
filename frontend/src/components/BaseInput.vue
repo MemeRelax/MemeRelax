@@ -1,20 +1,21 @@
 <template>
-  <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
-  <textarea
-    v-if="textarea"
-    class="b-input"
-    v-bind="$attrs"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
-
-  <input
-    v-else
-    class="b-input"
-    v-bind="$attrs"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <div>
+    <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
+    <textarea
+      v-if="textarea"
+      class="b-input"
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+    <input
+      v-else
+      class="b-input"
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+  </div>
 </template>
 
 <script>
@@ -31,6 +32,9 @@ export default {
     textarea: {
       type: Boolean,
       default: false,
+    },
+    index: {
+      type: Number,
     },
   },
 };
