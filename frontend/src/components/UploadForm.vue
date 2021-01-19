@@ -1,11 +1,11 @@
 <template>
-  <div class="c-upload-form">
+  <form class="c-upload-form" @change="onFormChange">
     <div class="c-upload-form__container">
       <div class="u-form-group">
         <BaseInput
           v-model="memeName"
           type="text"
-          id="meme-name"
+          :id="`memename${index}`"
           name="meme-name"
           label="Name"
         />
@@ -35,9 +35,8 @@
           textarea
         />
       </div>
-      <BaseButton @click="sendNewMeme">Save</BaseButton>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -50,26 +49,22 @@ export default {
       memeHashtags: "",
       selectedLanguageIds: [],
       selectedCategoryIds: [],
-      dataToSend: {},
     };
+  },
+  props: {
+    index: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     hashtagsArray: function() {
       return this.memeHashtags.split(/[ ,;.#]+/);
     },
-    // languageArray: function() {
-    //   return this.$store.state.tags.filter((t) => t.type === "language");
-    // },
-    // categoryArray: function() {
-    //   return this.$store.state.tags.filter((t) => t.type === "category");
-    // },
-  },
-  methods: {
-    autoSelectTag: function() {},
-    sendNewMeme: function() {
-      this.dataToSend = {
+    dataToSend: function() {
+      return {
         id: "22",
-        src: this.$store.state.droppedFiles,
+        src: this.$store.state.droppedFiles[this.index],
         name: this.memeName,
         userId: "11",
         languageId: this.selectedLanguageIds,
@@ -78,13 +73,15 @@ export default {
       };
     },
   },
+  methods: {
+    autoSelectTag: function() {},
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .c-upload-form {
-  @include pad-tb-spacer(4);
-  padding-top: rem(65px);
+  @include pad-tb-spacer(5);
 }
 
 .c-upload-form__container {
