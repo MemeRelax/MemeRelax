@@ -24,42 +24,50 @@
             id="file"
             accept="image/*"
             @change="onImagePick"
+            multiple
           />
           <label class="c-upload-box__label" for="file">
             <strong class="c-upload-box__label--link">Choose a file</strong>
             <span class="c-upload-box__dragndrop"> or drag it here</span>.
           </label>
         </div>
-        <div class="c-upload-box__success">
-          <img class="c-upload-box__success-image" :src="imageSrc" alt="" />
-        </div>
         <div class="c-upload-box__uploading">Uploading…</div>
-        <div class="c-upload-box__error">Error! <span></span>.</div>
+        <div class="c-upload-box__error">
+          Error!
+        </div>
       </form>
+      <div
+        v-for="(file, index) in droppedFiles"
+        :key="file.name"
+        class="c-upload-box__columns"
+      >
+        <UploadPreview :file="file" :index="index" />
+        <UploadForm :index="index" />
+      </div>
+      <BaseButton @click="sendNewMeme">Save</BaseButton>
     </div>
   </div>
 </template>
 
 <script>
+import UploadPreview from "@/components/UploadPreview.vue";
+import UploadForm from "@/components/UploadForm.vue";
+
 export default {
   name: "UploadBox",
+  components: { UploadPreview, UploadForm },
   data: function() {
     return {
-      imageSrc: "",
       highightedArea: false,
-      droppedFiles: false,
+      droppedFiles: null,
+      formsData: [],
     };
   },
   methods: {
     onImagePick(e) {
       this.droppedFiles = e.target.files || e.dataTransfer.files;
-      let fReader = new FileReader();
-      fReader.readAsDataURL(this.droppedFiles[0]);
-      const vm = this;
-      fReader.onloadend = function(event) {
-        vm.imageSrc = event.target.result;
-      };
       this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
+      console.log(this.$store.state.droppedFiles);
     },
     preventDefaults(e) {
       e.preventDefault();
@@ -85,7 +93,7 @@ export default {
 }
 
 .c-upload-box__form {
-  min-height: rem(200px);
+  height: 64%;
   padding: spacer(6);
   background-color: rgba($color-primary, 0.03);
   outline: 5px dashed rgba($color-primary, 0.5);
@@ -151,5 +159,15 @@ export default {
 .c-upload-box__success-image {
   margin-top: spacer(2);
   max-width: rem(400px);
+}
+
+.c-upload-box__columns {
+  display: grid;
+  column-gap: spacer(4);
+  background-color: $color-white;
+
+  @include respond("lg") {
+    grid-template-columns: 1fr minmax(rem(300px), 1fr);
+  }
 }
 </style>

@@ -3,7 +3,6 @@
     <TheHeader />
     <div class="v-upload__container">
       <UploadBox />
-      <UploadForm />
     </div>
     <TheFooter />
   </div>
@@ -12,7 +11,6 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import UploadForm from "@/components/UploadForm.vue";
 import UploadBox from "@/components/UploadBox.vue";
 
 export default {
@@ -21,7 +19,6 @@ export default {
     TheHeader,
     TheFooter,
     UploadBox,
-    UploadForm,
   },
 };
 </script>
@@ -31,9 +28,6 @@ export default {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-}
-
-.v-upload__container {
-  @extend .u-container-columns;
+  background-color: $color-white;
 }
 </style>
