@@ -27,8 +27,8 @@
             multiple
           />
           <label class="c-upload-box__label" for="file">
-            <strong class="c-upload-box__label--link">Choose a file</strong>
-            <span class="c-upload-box__dragndrop"> or drag it here</span>.
+            <strong class="c-upload-box__label--link">Choose files</strong>
+            <span class="c-upload-box__dragndrop"> or drag them here</span>.
           </label>
         </div>
         <div class="c-upload-box__uploading">Uploading…</div>
