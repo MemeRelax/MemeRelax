@@ -87,6 +87,8 @@ export default {
     sendForm() {
       console.log("save");
       console.log(this.$store.state.filledUploadForms);
+      // here save form on the server
+      // empty filledUploadForms state
     },
   },
 };
