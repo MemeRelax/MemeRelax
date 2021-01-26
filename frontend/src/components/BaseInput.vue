@@ -1,6 +1,9 @@
 <template>
   <div>
-    <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
+    <label class="b-input__label" :for="$attrs.id">{{ label }}</label
+    ><span v-if="instruction" class="u-form-instruction">{{
+      instruction
+    }}</span>
     <textarea
       v-if="textarea"
       class="b-input"
@@ -35,6 +38,9 @@ export default {
     },
     index: {
       type: Number,
+    },
+    instruction: {
+      type: String,
     },
   },
 };

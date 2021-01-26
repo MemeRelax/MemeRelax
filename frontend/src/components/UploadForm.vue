@@ -9,6 +9,7 @@
           :name="`meme-name-${index}`"
           label="Name"
           :index="index"
+          instruction="required"
         />
       </div>
       <div class="u-form-group">
@@ -18,6 +19,7 @@
           :name="`meme-language-${index}`"
           heading="Language"
           :index="index"
+          instruction="select minimum one"
         />
       </div>
       <div class="u-form-group">
@@ -27,6 +29,7 @@
           :name="`meme-category-${index}`"
           heading="Category"
           :index="index"
+          instruction="select minimum one"
         />
       </div>
       <div class="u-form-group">
