@@ -7,9 +7,9 @@
           type="text"
           :id="`meme-name-${index}`"
           :name="`meme-name-${index}`"
-          label="Name"
+          label="Name *"
           :index="index"
-          instruction="required"
+          errorMessage="required"
         />
       </div>
       <div class="u-form-group">
@@ -17,9 +17,9 @@
           :items="$store.getters['languageArray']"
           v-model="selectedLanguageIds"
           :name="`meme-language-${index}`"
-          heading="Language"
+          heading="Language *"
           :index="index"
-          instruction="select minimum one"
+          errorMessage="select minimum one"
         />
       </div>
       <div class="u-form-group">
@@ -27,9 +27,9 @@
           :items="$store.getters['categoryArray']"
           v-model="selectedCategoryIds"
           :name="`meme-category-${index}`"
-          heading="Category"
+          heading="Category *"
           :index="index"
-          instruction="select minimum one"
+          errorMessage="select minimum one"
         />
       </div>
       <div class="u-form-group">

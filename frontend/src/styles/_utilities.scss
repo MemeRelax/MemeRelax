@@ -36,6 +36,8 @@
 }
 
 .u-form-instruction {
-  font-size: rem(12px);
   margin-left: spacer(2);
+  font-size: rem(12px);
+  color: $color-error;
+  font-weight: 400;
 }
