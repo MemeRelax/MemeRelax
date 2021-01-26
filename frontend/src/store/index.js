@@ -36,8 +36,8 @@ export default createStore({
     SET_FILTERED_MEMES(state, filteredMemes) {
       state.filteredMemes = filteredMemes;
     },
-    SET_FILLED_UPLOAD_FORMS(state, filledUploadForms) {
-      state.filledUploadForms = filledUploadForms;
+    SET_FILLED_UPLOAD_FORMS(state, payload) {
+      state.filledUploadForms[payload.index] = payload;
     },
   },
   actions: {
