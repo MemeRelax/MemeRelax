@@ -3,7 +3,7 @@
     <div class="c-upload-box__container">
       <h1 class="u-heading-h1">Upload your meme</h1>
       <form
-        class="c-upload-box__form"
+        class="c-upload-box__upload-form"
         :class="{ highlighted: highightedArea }"
         method="post"
         enctype="multipart/form-data"
@@ -36,7 +36,7 @@
           Error!
         </div>
       </form>
-      <div v-if="droppedFiles" class="c-upload-box__actions">
+      <form v-if="droppedFiles" class="c-upload-box__form">
         <div
           v-for="(file, index) in droppedFiles"
           :key="file.name"
@@ -45,8 +45,8 @@
           <UploadPreview :file="file" :index="index" />
           <UploadForm :index="index" />
         </div>
-        <BaseButton @click="sendMemes">Save</BaseButton>
-      </div>
+        <BaseButton>Save</BaseButton>
+      </form>
     </div>
   </div>
 </template>
@@ -81,9 +81,6 @@ export default {
     removeHighlightArea() {
       this.highightedArea = false;
     },
-    sendMemes() {
-      console.log("save clicked");
-    },
   },
 };
 </script>
@@ -97,7 +94,7 @@ export default {
   @extend .u-container;
 }
 
-.c-upload-box__form {
+.c-upload-box__upload-form {
   height: 64%;
   padding: spacer(6);
   background-color: rgba($color-primary, 0.03);

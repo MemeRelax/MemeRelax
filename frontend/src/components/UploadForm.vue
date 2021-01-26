@@ -1,5 +1,5 @@
 <template>
-  <form class="c-upload-form" @change="onFormChange">
+  <div class="c-upload-form">
     <div class="c-upload-form__container">
       <div class="u-form-group">
         <BaseInput
@@ -40,7 +40,7 @@
         />
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -48,7 +48,6 @@ export default {
   name: "UploadForm",
   data: function() {
     return {
-      tags: [],
       memeName: "",
       memeHashtags: "",
       selectedLanguageIds: [],
@@ -67,6 +66,7 @@ export default {
     },
     dataToSend: function() {
       return {
+        index: this.index,
         id: "22",
         src: this.$store.state.droppedFiles[this.index],
         name: this.memeName,
@@ -75,6 +75,12 @@ export default {
         categoryId: this.selectedCategoryIds,
         hashtags: this.hashtagsArray,
       };
+    },
+  },
+  watch: {
+    dataToSend: function(data) {
+      this.$store.commit("SET_FILLED_UPLOAD_FORMS", data);
+      console.log(this.$store.state.filledUploadForms);
     },
   },
   methods: {
