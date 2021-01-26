@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import _ from "lodash";
+
 export default {
   name: "UploadForm",
   data: function() {
@@ -78,10 +80,9 @@ export default {
     },
   },
   watch: {
-    dataToSend: function(data) {
+    dataToSend: _.debounce(function(data) {
       this.$store.commit("SET_FILLED_UPLOAD_FORMS", data);
-      console.log(this.$store.state.filledUploadForms);
-    },
+    }, 500),
   },
   methods: {
     autoSelectTag: function() {},
