@@ -36,7 +36,11 @@
           Error!
         </div>
       </form>
-      <form v-if="droppedFiles" class="c-upload-box__form">
+      <form
+        v-if="droppedFiles"
+        class="c-upload-box__form"
+        @submit.prevent="sendForm"
+      >
         <div
           v-for="(file, index) in droppedFiles"
           :key="file.name"
@@ -69,7 +73,6 @@ export default {
     onImagePick(e) {
       this.droppedFiles = e.target.files || e.dataTransfer.files;
       this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
-      console.log(this.$store.state.droppedFiles);
     },
     preventDefaults(e) {
       e.preventDefault();
@@ -80,6 +83,10 @@ export default {
     },
     removeHighlightArea() {
       this.highightedArea = false;
+    },
+    sendForm() {
+      console.log("save");
+      console.log(this.$store.state.filledUploadForms);
     },
   },
 };
