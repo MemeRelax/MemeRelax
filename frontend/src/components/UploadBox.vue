@@ -3,6 +3,7 @@
     <div class="c-upload-box__container">
       <h1 class="u-heading-h1">Upload your meme</h1>
       <form
+        v-if="!droppedFiles"
         class="c-upload-box__upload-form"
         :class="{ highlighted: highightedArea }"
         method="post"
