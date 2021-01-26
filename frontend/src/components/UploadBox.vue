@@ -36,11 +36,7 @@
           Error!
         </div>
       </form>
-      <form
-        v-if="droppedFiles"
-        class="c-upload-box__form"
-        @submit.prevent="sendForm"
-      >
+      <Form v-if="droppedFiles" class="c-upload-box__form" @submit="sendForm">
         <div
           v-for="(file, index) in droppedFiles"
           :key="file.name"
@@ -50,18 +46,19 @@
           <UploadForm :index="index" />
         </div>
         <BaseButton>Save</BaseButton>
-      </form>
+      </Form>
     </div>
   </div>
 </template>
 
 <script>
+import { Form } from "vee-validate";
 import UploadPreview from "@/components/UploadPreview.vue";
 import UploadForm from "@/components/UploadForm.vue";
 
 export default {
   name: "UploadBox",
-  components: { UploadPreview, UploadForm },
+  components: { UploadPreview, UploadForm, Form },
   data: function() {
     return {
       highightedArea: false,
@@ -84,7 +81,8 @@ export default {
     removeHighlightArea() {
       this.highightedArea = false;
     },
-    sendForm() {
+    sendForm(values) {
+      alert(JSON.stringify(values, null, 2));
       console.log("save");
       console.log(this.$store.state.filledUploadForms);
       // here save form on the server

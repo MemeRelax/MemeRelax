@@ -1,6 +1,9 @@
 <template>
   <div>
     <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
+    <span v-if="errorMessage" class="u-form-instruction">
+      <ErrorMessage :name="name" />
+    </span>
     <textarea
       v-if="textarea"
       class="b-input"
@@ -8,18 +11,23 @@
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
     />
-    <input
+    <Field
       v-else
+      :name="name"
       class="b-input"
       v-bind="$attrs"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
+      :rules="validateInput"
     />
   </div>
 </template>
 
 <script>
+import { Field, ErrorMessage } from "vee-validate";
+
 export default {
+  components: { Field, ErrorMessage },
   props: {
     label: {
       type: String,
@@ -35,6 +43,21 @@ export default {
     },
     index: {
       type: Number,
+    },
+    errorMessage: {
+      type: String,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    validateInput(value) {
+      if (!value) {
+        return this.errorMessage;
+      }
+      return true;
     },
   },
 };

@@ -1,13 +1,17 @@
 <template>
   <div class="b-checkbox-group">
-    <span v-if="heading" class="b-checkbox-group__heading">{{ heading }}</span>
+    <span v-if="heading" class="b-checkbox-group__heading">{{ heading }}</span
+    ><span v-if="errorMessage" class="u-form-instruction">
+      <ErrorMessage :name="name" />
+    </span>
     <ul class="b-checkbox-group__list">
       <li
         class="b-checkbox-group__list-item"
         v-for="tag in items"
         :key="`${tag.id}-tag-${index}`"
       >
-        <input
+        <Field
+          :name="name"
           class="b-checkbox-group__input"
           v-bind="$attrs"
           type="checkbox"
@@ -15,6 +19,7 @@
           :value="tag.id"
           v-model="selectedTags"
           @change="$emit('update:modelValue', selectedTags)"
+          :rules="validateCheckboxGroup"
         />
         <label class="b-checkbox-group__label" :for="`${tag.id}-${index}`">{{
           tag.name
@@ -25,7 +30,10 @@
 </template>
 
 <script>
+import { Field, ErrorMessage } from "vee-validate";
+
 export default {
+  components: { Field, ErrorMessage },
   props: {
     heading: {
       type: [String, Number],
@@ -40,11 +48,26 @@ export default {
     index: {
       type: Number,
     },
+    errorMessage: {
+      type: String,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
   },
   data: function() {
     return {
       selectedTags: [],
     };
+  },
+  methods: {
+    validateCheckboxGroup(value) {
+      if (value && value.length) {
+        return true;
+      }
+      return this.errorMessage;
+    },
   },
 };
 </script>
@@ -70,6 +93,7 @@ export default {
 .b-checkbox-group__label {
   display: inline-block;
   border: 1px solid rgba($color-primary, 0.3);
+  border-radius: 50px;
   color: rgba($color-primary, 0.8);
   font-size: rem(14px);
   font-weight: 400;
@@ -84,10 +108,6 @@ export default {
   -webkit-tap-highlight-color: transparent;
   transition: all 0.2s;
   cursor: pointer;
-
-  @include respond("lg") {
-    padding: spacer(2) spacer(3);
-  }
 }
 
 .b-checkbox-group__input[type="checkbox"]:checked + .b-checkbox-group__label {

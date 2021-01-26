@@ -34,3 +34,10 @@
   flex-wrap: wrap;
   margin-bottom: spacer(3);
 }
+
+.u-form-instruction {
+  margin-left: spacer(2);
+  font-size: rem(12px);
+  color: $color-error;
+  font-weight: 400;
+}
