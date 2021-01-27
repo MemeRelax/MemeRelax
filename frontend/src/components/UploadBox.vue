@@ -145,6 +145,10 @@ export default {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+
+  &:focus ~ .c-upload-box__label {
+    @include focusOutline;
+  }
 }
 
 .c-upload-box__input {

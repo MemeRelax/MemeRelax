@@ -122,6 +122,6 @@ export default {
   opacity: 0;
 }
 .b-checkbox-group__input[type="checkbox"]:focus + .b-checkbox-group__label {
-  border: 1px solid $color-secondary;
+  @include focusOutline;
 }
 </style>
