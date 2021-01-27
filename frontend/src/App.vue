@@ -15,5 +15,6 @@ body {
   font-family: $font-main;
   font-weight: 300;
   color: $color-dark;
+  background-color: $color-white;
 }
 </style>

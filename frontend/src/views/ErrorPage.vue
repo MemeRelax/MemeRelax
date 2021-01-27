@@ -1,8 +1,8 @@
 <template>
-  <div class="v-upload">
+  <div class="v-error-page">
     <TheHeader />
-    <div class="v-upload__container">
-      <UploadBox />
+    <div class="v-error-page__container">
+      NOT FOUND
     </div>
     <TheFooter />
   </div>
@@ -11,22 +11,28 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import UploadBox from "@/components/UploadBox.vue";
 
 export default {
-  name: "Upload",
+  name: "ErrorPage",
   components: {
     TheHeader,
     TheFooter,
-    UploadBox,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.v-upload {
+.v-error-page {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.v-error-page__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: rem(30px);
 }
 </style>
