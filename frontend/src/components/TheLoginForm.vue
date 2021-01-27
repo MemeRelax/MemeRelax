@@ -19,7 +19,7 @@
           label="Password"
         />
       </div>
-      <div class="u-form-group">
+      <div class="c-login-form-actions u-form-group">
         <BaseButton>Log in</BaseButton>
       </div>
     </div>
@@ -50,5 +50,11 @@ export default {
   justify-content: center;
   min-height: 60%;
   max-width: rem(300px);
+}
+
+.c-login-form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

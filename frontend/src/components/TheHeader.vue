@@ -11,8 +11,7 @@
       >
       <div class="c-header__access">
         <router-link to="/upload" class="c-header__link">Upload</router-link> |
-        <router-link to="/login" class="c-header__link">Log in</router-link> |
-        <router-link to="/sign-up" class="c-header__link">Sign up</router-link>
+        <router-link to="/login" class="c-header__link">Log in</router-link>
       </div>
     </div>
   </div>
