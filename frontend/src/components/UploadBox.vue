@@ -3,7 +3,7 @@
     <div class="c-upload-box__container">
       <h1 class="u-heading-h1">Upload your meme</h1>
       <form
-        v-if="!droppedFiles"
+        v-if="droppedFiles.length === 0"
         class="c-upload-box__upload-form"
         :class="{ highlighted: highightedArea }"
         method="post"
@@ -37,7 +37,11 @@
           Error!
         </div>
       </form>
-      <Form v-if="droppedFiles" class="c-upload-box__form" @submit="sendForm">
+      <Form
+        v-if="droppedFiles.length > 0"
+        class="c-upload-box__form"
+        @submit="handleSubmit"
+      >
         <div
           v-for="(file, index) in droppedFiles"
           :key="file.name"
@@ -46,7 +50,15 @@
           <UploadPreview :file="file" :index="index" />
           <UploadForm :index="index" />
         </div>
-        <BaseButton>Save</BaseButton>
+        <div class="c-upload-box__form-actions">
+          <BaseButton>Save</BaseButton>
+          <button
+            class="c-upload-box__form-actions-cancel"
+            @click.prevent="handleCancel"
+          >
+            Cancel
+          </button>
+        </div>
       </Form>
     </div>
   </div>
@@ -63,14 +75,14 @@ export default {
   data: function() {
     return {
       highightedArea: false,
-      droppedFiles: null,
-      formsData: [],
+      droppedFiles: [],
     };
   },
   methods: {
     onImagePick(e) {
       this.droppedFiles = e.target.files || e.dataTransfer.files;
       this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
+      // here start uploading files to server while user is filling form
     },
     preventDefaults(e) {
       e.preventDefault();
@@ -82,12 +94,18 @@ export default {
     removeHighlightArea() {
       this.highightedArea = false;
     },
-    sendForm(values) {
+    handleSubmit(values) {
       alert(JSON.stringify(values, null, 2));
       console.log("save");
       console.log(this.$store.state.filledUploadForms);
       // here save form on the server
       // empty filledUploadForms state
+    },
+    handleCancel() {
+      this.droppedFiles = [];
+      this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
+      this.$store.commit("SET_FILLED_UPLOAD_FORMS", []);
+      //also remove already loaded files on the server
     },
   },
 };
@@ -179,5 +197,22 @@ export default {
   @include respond("lg") {
     grid-template-columns: 1fr minmax(rem(300px), 1fr);
   }
+}
+
+.c-upload-box__form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50%;
+}
+
+.c-upload-box__form-actions-cancel {
+  margin-left: spacer(4);
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>
