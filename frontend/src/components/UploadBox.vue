@@ -114,10 +114,12 @@ export default {
 <style lang="scss" scoped>
 .c-upload-box {
   @include pad-tb-spacer(4);
+  height: 100%;
 }
 
 .c-upload-box__container {
   @extend .u-container;
+  height: 100%;
 }
 
 .c-upload-box__upload-form {
