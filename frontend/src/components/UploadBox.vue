@@ -29,7 +29,7 @@
           />
           <label class="c-upload-box__label" for="file">
             <strong class="c-upload-box__label--link">Choose files</strong>
-            <span class="c-upload-box__dragndrop"> or drag them here</span>.
+            <span class="c-upload-box__dragndrop">&nbsp;or drag them here</span>
           </label>
         </div>
         <div class="c-upload-box__uploading">Uploading…</div>
@@ -123,7 +123,8 @@ export default {
 }
 
 .c-upload-box__upload-form {
-  height: 64%;
+  position: relative;
+  height: 50%;
   padding: spacer(6);
   background-color: rgba($color-primary, 0.03);
   outline: 5px dashed rgba($color-primary, 0.5);
@@ -154,14 +155,25 @@ export default {
 }
 
 .c-upload-box__label {
-  margin-bottom: spacer(3);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: rem(20px);
   cursor: pointer;
 
-  &--link {
-    position: relative;
-    z-index: 1;
-    &:hover,
-    &:active {
+  &:hover,
+  &:active {
+    .c-upload-box__label--link {
+      position: relative;
+      z-index: 1;
+
       &::before {
         content: "";
         position: absolute;
