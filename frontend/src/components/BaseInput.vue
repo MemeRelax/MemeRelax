@@ -1,8 +1,10 @@
 <template>
-  <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
-  <span v-if="errorMessage" class="u-form-instruction">
-    <ErrorMessage :name="name" />
-  </span>
+  <div class="b-input__label-row">
+    <label class="b-input__label" :for="$attrs.id">{{ label }}</label>
+    <span v-if="errorMessage" class="u-form-instruction">
+      <ErrorMessage :name="name" />
+    </span>
+  </div>
   <textarea
     v-if="textarea"
     class="b-input"
