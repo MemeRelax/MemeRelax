@@ -2,6 +2,15 @@
   <div class="c-filter">
     <div class="c-filter__container">
       <div class="u-form-group">
+        <BaseInput
+          v-model="filterText"
+          type="text"
+          :id="`filter-text`"
+          :name="`filter-text`"
+          label="Filter by text content"
+        />
+      </div>
+      <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['languageArray']"
           v-model="selectedLanguageFilters"
@@ -26,32 +35,59 @@ export default {
   name: "TheFilter",
   data() {
     return {
+      filterText: "",
       selectedLanguageFilters: [],
       selectedCategoryFilters: [],
     };
   },
   watch: {
     selectedLanguageFilters: function() {
-      this.filter();
+      this.filter(this.$store.state.memes);
     },
     selectedCategoryFilters: function() {
-      this.filter();
+      this.filter(this.$store.state.memes);
+    },
+    filterText: function() {
+      this.filter(this.$store.state.memes);
     },
   },
   methods: {
-    filter: function() {
-      let result = [];
-      this.$store.state.memes.forEach((meme) => {
-        let memeTagsArray = [...meme.languageId, ...meme.categoryId];
-        let selectedFiltersArray = [
-          ...this.selectedLanguageFilters,
-          ...this.selectedCategoryFilters,
-        ];
-        if (selectedFiltersArray.every((v) => memeTagsArray.includes(v))) {
-          result.push(meme);
+    filter: function(memes) {
+      let filteredMemes = [];
+
+      memes.forEach((meme) => {
+        let memeHasTags = true;
+        let memeHasText = true;
+
+        if (this.filterText !== "") {
+          let memeText = [...meme.hashtags, meme.name]
+            .join(" ")
+            .replace(/[-,;.#]+/g, "")
+            .toLowerCase();
+
+          memeHasText = memeText.includes(this.filterText.toLowerCase());
+        }
+
+        if (
+          this.selectedLanguageFilters.length > 0 ||
+          this.selectedCategoryFilters.length > 0
+        ) {
+          let memeTagsArray = [...meme.languageId, ...meme.categoryId];
+          let selectedFiltersArray = [
+            ...this.selectedLanguageFilters,
+            ...this.selectedCategoryFilters,
+          ];
+          memeHasTags = selectedFiltersArray.every((v) =>
+            memeTagsArray.includes(v)
+          );
+        }
+
+        if (memeHasTags && memeHasText) {
+          filteredMemes.push(meme);
         }
       });
-      this.$store.commit("SET_FILTERED_MEMES", result);
+
+      this.$store.commit("SET_FILTERED_MEMES", filteredMemes);
     },
   },
 };
