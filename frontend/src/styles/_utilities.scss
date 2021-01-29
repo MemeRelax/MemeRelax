@@ -41,3 +41,12 @@
   color: $color-error;
   font-weight: 400;
 }
+
+.u-link-button {
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
