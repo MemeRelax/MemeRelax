@@ -62,8 +62,10 @@ export default {
 .c-meme {
   display: flex;
   flex-direction: column;
+  max-width: rem(500px);
+  margin: 0 auto;
 
-  @include respond("md") {
+  @include respond("xxl") {
     flex-direction: row;
   }
 }
@@ -73,7 +75,7 @@ export default {
   border: 20px solid $color-primary;
   border-bottom: 0;
 
-  @include respond("md") {
+  @include respond("xxl") {
     border: 20px solid $color-primary;
   }
 
@@ -98,7 +100,7 @@ export default {
 .c-meme-info__details {
   display: flex;
 
-  @include respond("md") {
+  @include respond("xxl") {
     display: block;
   }
 }
@@ -111,7 +113,7 @@ export default {
 .c-meme__info-tag-list {
   display: block;
 
-  @include respond("md") {
+  @include respond("xxl") {
     margin-left: spacer(3);
   }
 }
