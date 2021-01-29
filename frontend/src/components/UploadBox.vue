@@ -52,10 +52,7 @@
         </div>
         <div class="c-upload-box__form-actions">
           <BaseButton>Save</BaseButton>
-          <button
-            class="c-upload-box__form-actions-cancel"
-            @click.prevent="handleCancel"
-          >
+          <button class="u-link-button " @click.prevent="handleCancel">
             Cancel
           </button>
         </div>
@@ -224,13 +221,7 @@ export default {
   margin-left: 50%;
 }
 
-.c-upload-box__form-actions-cancel {
+.u-link-button {
   margin-left: spacer(4);
-  border: 0;
-  background-color: transparent;
-  font-family: inherit;
-  color: inherit;
-  text-decoration: underline;
-  cursor: pointer;
 }
 </style>

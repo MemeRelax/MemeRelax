@@ -26,6 +26,11 @@
           heading="Category"
         />
       </div>
+      <div class="u-form-group">
+        <button class="u-link-button" @click.prevent="handleReset">
+          Reset
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -88,6 +93,9 @@ export default {
       });
 
       this.$store.commit("SET_FILTERED_MEMES", filteredMemes);
+    },
+    handleReset: function() {
+      //here reseting
     },
   },
 };
