@@ -37,12 +37,18 @@ export default {
 <style lang="scss" scoped>
 .c-upload-preview {
   @include pad-tb-spacer(5);
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  max-width: rem(450px);
+  margin: 0 auto;
+
+  @include respond("lg") {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .c-upload-preview__image {
+  margin: 0 auto;
   width: 90%;
 
   img {

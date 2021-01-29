@@ -11,6 +11,23 @@ export default {
 </script>
 
 <style lang="scss">
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  *,
+  *::after,
+  *::before {
+    animation: rotation 5s infinite linear;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 body {
   font-family: $font-main;
   font-weight: 300;
