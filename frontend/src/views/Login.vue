@@ -1,9 +1,9 @@
 <template>
   <div class="v-login">
     <TheHeader />
-    <div class="v-login__container">
+    <main class="v-login__container">
       <TheLoginForm />
-    </div>
+    </main>
     <TheFooter />
   </div>
 </template>

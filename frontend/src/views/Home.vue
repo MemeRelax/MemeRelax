@@ -1,10 +1,10 @@
 <template>
   <div class="v-home">
     <TheHeader />
-    <div class="v-home__container">
+    <main class="v-home__container">
       <TheMemesContainer />
       <TheFilter />
-    </div>
+    </main>
     <TheFooter />
   </div>
 </template>
