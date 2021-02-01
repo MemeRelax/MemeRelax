@@ -91,9 +91,7 @@ export default {
     removeHighlightArea() {
       this.highightedArea = false;
     },
-    handleSubmit(values) {
-      alert(JSON.stringify(values, null, 2));
-      console.log("save");
+    handleSubmit() {
       console.log(this.$store.state.filledUploadForms);
       // here save form on the server
       // empty filledUploadForms state
