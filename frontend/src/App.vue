@@ -6,6 +6,7 @@
 export default {
   created() {
     this.$store.dispatch("fetchTags");
+    this.$store.dispatch("fetchMemes");
   },
 };
 </script>

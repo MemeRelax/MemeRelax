@@ -1,5 +1,5 @@
 <template>
-  <div class="c-header">
+  <header class="c-header">
     <div class="c-header__container">
       <router-link
         to="/"
@@ -9,12 +9,12 @@
         :class="{ active: headingHover }"
         >Memerelax</router-link
       >
-      <div class="c-header__access">
+      <nav class="c-header__navigaton">
         <router-link to="/upload" class="c-header__link">Upload</router-link> |
         <router-link to="/login" class="c-header__link">Log in</router-link>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -61,7 +61,7 @@ export default {
   }
 }
 
-.c-header__access {
+.c-header__navigaton {
   color: $color-white;
 }
 

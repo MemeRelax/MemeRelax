@@ -1,9 +1,9 @@
 <template>
   <div class="v-upload">
     <TheHeader />
-    <div class="v-upload__container">
+    <main class="v-upload__container">
       <UploadBox />
-    </div>
+    </main>
     <TheFooter />
   </div>
 </template>

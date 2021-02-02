@@ -1,9 +1,9 @@
 <template>
   <div class="v-sign-up">
     <TheHeader />
-    <div class="v-sign-up__container">
+    <main class="v-sign-up__container">
       <TheRegistrationForm />
-    </div>
+    </main>
     <TheFooter />
   </div>
 </template>

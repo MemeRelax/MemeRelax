@@ -1,9 +1,9 @@
 <template>
-  <div class="c-footer">
+  <footer class="c-footer">
     <div class="c-footer__container">
       No rights reserved :(
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>

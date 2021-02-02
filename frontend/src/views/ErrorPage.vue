@@ -1,9 +1,9 @@
 <template>
   <div class="v-error-page">
     <TheHeader />
-    <div class="v-error-page__container">
+    <main class="v-error-page__container">
       NOT FOUND
-    </div>
+    </main>
     <TheFooter />
   </div>
 </template>

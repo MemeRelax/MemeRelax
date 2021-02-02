@@ -19,19 +19,39 @@
 
 <script>
 import Meme from "@/components/Meme.vue";
+// import _ from "lodash";
 
 export default {
   name: "TheMemesContainer",
-  components: {
-    Meme,
+  data() {
+    return {
+      itemsShown: 3,
+    };
+  },
+  created() {
+    this.scroll();
   },
   computed: {
     memes: function() {
-      return this.$store.state.filteredMemes;
+      return this.$store.state.filteredMemes.slice(0, this.itemsShown);
     },
   },
-  created() {
-    this.$store.dispatch("fetchMemes");
+  components: {
+    Meme,
+  },
+  methods: {
+    scroll() {
+      window.onscroll = () => {
+        const {
+          scrollHeight,
+          scrollTop,
+          clientHeight,
+        } = document.documentElement;
+        if (scrollTop + clientHeight > scrollHeight - 10) {
+          this.itemsShown = this.itemsShown + 3;
+        }
+      };
+    },
   },
 };
 </script>
