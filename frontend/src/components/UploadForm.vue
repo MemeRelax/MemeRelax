@@ -84,7 +84,7 @@ export default {
   },
   watch: {
     dataToSend: _.debounce(function(data) {
-      this.$store.commit("SET_FILLED_UPLOAD_FORMS", data);
+      this.$store.dispatch("updateFilledUploadForms", data);
     }, 500),
   },
   methods: {

@@ -82,7 +82,7 @@ export default {
   methods: {
     onImagePick(e) {
       this.droppedFiles = e.target.files || e.dataTransfer.files;
-      this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
+      this.$store.dispatch("updateDroppedFiles", this.droppedFiles);
       // here start uploading files to server while user is filling form
     },
     preventDefaults(e) {
@@ -102,8 +102,8 @@ export default {
     },
     handleCancel() {
       this.droppedFiles = [];
-      this.$store.commit("SET_DROPPED_FILES", this.droppedFiles);
-      this.$store.commit("SET_FILLED_UPLOAD_FORMS", []);
+      this.$store.dispatch("updateDroppedFiles", this.droppedFiles);
+      this.$store.dispatch("updateFilledUploadForms", []);
       //also remove already loaded files on the server
     },
   },

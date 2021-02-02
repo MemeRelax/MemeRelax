@@ -60,6 +60,15 @@ export default createStore({
         })
         .catch((e) => console.log(e));
     },
+    updateFilteredMemes(context, payload) {
+      context.commit("SET_FILTERED_MEMES", payload);
+    },
+    updateDroppedFiles(context, payload) {
+      context.commit("SET_DROPPED_FILES", payload);
+    },
+    updateFilledUploadForms(context, payload) {
+      context.commit("SET_FILLED_UPLOAD_FORMS", payload);
+    },
   },
   getters: {
     getTagById: (state) => (id) => state.tags.find((el) => el.id === id),
