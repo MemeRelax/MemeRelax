@@ -3,7 +3,7 @@
     <div class="c-filter__container">
       <div class="u-form-group">
         <BaseInput
-          v-model="filterText"
+          v-model:modelValue="filterText"
           type="text"
           :id="`filter-text`"
           :name="`filter-text`"
@@ -13,7 +13,7 @@
       <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['languageArray']"
-          v-model="selectedLanguageFilters"
+          v-model:modelValue="selectedLanguageFilters"
           name="meme-languages"
           heading="Language"
         />
@@ -21,7 +21,7 @@
       <div class="u-form-group">
         <BaseCheckboxGroup
           :items="$store.getters['categoryArray']"
-          v-model="selectedCategoryFilters"
+          v-model:modelValue="selectedCategoryFilters"
           name="meme-categories"
           heading="Category"
         />
@@ -92,10 +92,12 @@ export default {
         }
       });
 
-      this.$store.commit("SET_FILTERED_MEMES", filteredMemes);
+      this.$store.dispatch("updateFilteredMemes", filteredMemes);
     },
     handleReset: function() {
-      //here reseting
+      this.filterText = "";
+      this.selectedLanguageFilters = [];
+      this.selectedCategoryFilters = [];
     },
   },
 };
