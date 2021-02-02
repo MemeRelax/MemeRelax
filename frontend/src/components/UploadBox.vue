@@ -40,7 +40,7 @@
       <Form
         v-if="droppedFiles.length > 0"
         class="c-upload-box__form"
-        @submit="handleSubmit"
+        @submit.prevent="handleSubmit"
       >
         <div
           v-for="(file, index) in droppedFiles"
@@ -51,8 +51,12 @@
           <UploadForm :index="index" />
         </div>
         <div class="c-upload-box__form-actions">
-          <BaseButton>Save</BaseButton>
-          <button class="u-link-button " @click.prevent="handleCancel">
+          <BaseButton type="submit">Save</BaseButton>
+          <button
+            type="button"
+            class="u-link-button "
+            @click.prevent="handleCancel"
+          >
             Cancel
           </button>
         </div>
